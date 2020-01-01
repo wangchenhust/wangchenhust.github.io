@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="LittleCoder">
 <meta property="og:description" content="​    尽管之前已经讲了很多关于初始化的知识，此处做一个小小的总结。  类只有在用到时才进行加载，并且只加载一次，首先加载main的入口类，因为它第一个被用到喽，如果入口类有父类，则先加载入口类的父类。第一次加载时会按照定义顺序初始化类中的静态区，即被static修饰的，注意static方法里的局部变量是不会被初始化的，如果有人问如果static方法里面万一有个static变量怎么办？？好问题，">
 <meta property="article:published_time" content="2019-07-01T04:29:39.000Z">
-<meta property="article:modified_time" content="2020-01-01T14:26:58.631Z">
+<meta property="article:modified_time" content="2020-01-01T14:48:41.681Z">
 <meta property="article:author" content="WangChen">
 <meta property="article:tag" content="Thinking_in_Java">
 <meta name="twitter:card" content="summary">
@@ -343,7 +343,7 @@
       
         <p>​    尽管之前已经讲了很多关于初始化的知识，此处做一个小小的总结。</p>
 <ul>
-<li>类只有在用到时才进行加载，并且只加载一次，首先加载main的入口类，因为它第一个被用到喽，如果入口类有父类，则先加载入口类的父类。第一次加载时会按照定义顺序初始化类中的静态区，即被static修饰的，注意static方法里的局部变量是不会被初始化的，如果有人问如果static方法里面万一有个static变量怎么办？？好问题，不过这种情况是不存在的，因为static不能修饰局部变量。</li>
+<li>类只有在用到时才进行加载，并且只加载一次，首先加载main的入口类，因为它第一个被用到喽，如果入口类有父类，则先加载入口类的父类。第一次加载时会按照定义顺序初始化类中的静态区，即被static修饰的，注意static方法里的局部变量是不会被初始化的，如果有人问如果static方法里面万一有个static变量怎么办？？好问题，不过这种情况是不存在的，因为static不能修饰局部变量。<a id="more"></a></li>
 <li>只有在创建对象时才会对非静态区进行初始化，最后调用构造方法，即在调用构造方法前，所有的初始化都已经完成，换个角度而言，在对象创建之前，非静态区都无法被使用，所以就没必要初始化。</li>
 <li>有一点难以理解的是【欢迎讨论】，导出类的构造方法一定会调用基类的构造方法，尽管调用基类的代码在导出类构造方法中，即看似在导出类非静态对象或变量之后，但初始化顺序仍然为先基类构造方法再导出类非静态对象或变量，再是导出类构造方法。</li>
 </ul>
