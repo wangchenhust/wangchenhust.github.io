@@ -79,14 +79,20 @@
 
 
 
-<meta name="description" content="Stay hungry, stay foolish">
-<meta property="og:type" content="website">
-<meta property="og:title" content="MorningCoder">
-<meta property="og:url" content="https://wangchenhust.github.io/archives/2019/07/index.html">
+<meta name="description" content="CNN历史演化图：   ImageNet挑战赛总结 从2009到2017，ImageNet的8年历史，真可谓是直接代表深度学习的革命引领。先看下图：  可以看到，一年一年都有结构上的创新，不止深度上的变化，top 5 error也从28.2%到3.57%（top 5 error，表示最后概率向量最大的前五名中出现了正确概率即为预测正确。上面的表示错误率），超过了接受过训练的人在ImageNet数据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深度学习&#x2F;CNN">
+<meta property="og:url" content="https://wangchenhust.github.io/2020/04/06/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/CNN/index.html">
 <meta property="og:site_name" content="MorningCoder">
-<meta property="og:description" content="Stay hungry, stay foolish">
+<meta property="og:description" content="CNN历史演化图：   ImageNet挑战赛总结 从2009到2017，ImageNet的8年历史，真可谓是直接代表深度学习的革命引领。先看下图：  可以看到，一年一年都有结构上的创新，不止深度上的变化，top 5 error也从28.2%到3.57%（top 5 error，表示最后概率向量最大的前五名中出现了正确概率即为预测正确。上面的表示错误率），超过了接受过训练的人在ImageNet数据">
+<meta property="og:image" content="D:%5Csoftdownload%5COffice%5C%E6%9C%89%E9%81%93%E4%BA%91%5CFile%5Cwangchen_hust@163.com%5C568550a171da407dbe93d7b276563567%5Cclipboard.png">
+<meta property="og:image" content="D:%5Csoftdownload%5COffice%5C%E6%9C%89%E9%81%93%E4%BA%91%5CFile%5Cwangchen_hust@163.com%5Cb9aa6453459a4c4f893dfacc869fc631%5Cclipboard.png">
+<meta property="og:image" content="D:%5Csoftdownload%5COffice%5C%E6%9C%89%E9%81%93%E4%BA%91%5CFile%5Cwangchen_hust@163.com%5Cfe4107b655b74e6ab5b42c0d466474f2%5C23818_1440w.jpeg">
+<meta property="article:published_time" content="2020-04-05T17:43:00.351Z">
+<meta property="article:modified_time" content="2020-04-05T17:43:00.768Z">
 <meta property="article:author" content="WangChen">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="D:%5Csoftdownload%5COffice%5C%E6%9C%89%E9%81%93%E4%BA%91%5CFile%5Cwangchen_hust@163.com%5C568550a171da407dbe93d7b276563567%5Cclipboard.png">
 
 
 
@@ -116,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://wangchenhust.github.io/archives/2019/07/"/>
+  <link rel="canonical" href="https://wangchenhust.github.io/2020/04/06/深度学习/CNN/"/>
 
 
 
 
 
-  <title>归档 | MorningCoder</title>
+  <title>深度学习/CNN | MorningCoder</title>
   
 
 
@@ -141,7 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -235,74 +241,151 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 13 篇日志。 继续努力。
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangchenhust.github.io/wangchenhust.github.io/2020/04/06/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/CNN/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WangChen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/wangchenhust.github.io/uploads/jobs.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MorningCoder">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/wangchenhust.github.io/2019/07/01/%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%8A%E7%B1%BB%E7%9A%84%E5%8A%A0%E8%BD%BD/" itemprop="url">
-              
-                <span itemprop="name">初始化与类的加载</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">深度学习/CNN</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-07-01T12:29:39+08:00"
-              content="2019-07-01" >
-          07-01
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-06T01:43:00+08:00">
+                2020-04-06
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <p>CNN历史演化图：</p>
+<p><img src="D:%5Csoftdownload%5COffice%5C%E6%9C%89%E9%81%93%E4%BA%91%5CFile%5Cwangchen_hust@163.com%5C568550a171da407dbe93d7b276563567%5Cclipboard.png" alt="img"></p>
+<p><img src="D:%5Csoftdownload%5COffice%5C%E6%9C%89%E9%81%93%E4%BA%91%5CFile%5Cwangchen_hust@163.com%5Cb9aa6453459a4c4f893dfacc869fc631%5Cclipboard.png" alt="img"></p>
+<p><strong>ImageNet挑战赛总结</strong></p>
+<p>从2009到2017，ImageNet的8年历史，真可谓是直接代表深度学习的革命引领。先看下图：</p>
+<p><img src="D:%5Csoftdownload%5COffice%5C%E6%9C%89%E9%81%93%E4%BA%91%5CFile%5Cwangchen_hust@163.com%5Cfe4107b655b74e6ab5b42c0d466474f2%5C23818_1440w.jpeg" alt="img"></p>
+<p>可以看到，一年一年都有结构上的创新，不止深度上的变化，top 5 error也从28.2%到3.57%（top 5 error，表示最后概率向量最大的前五名中出现了正确概率即为预测正确。上面的表示错误率），超过了接受过训练的人在ImageNet数据集上对图片进行分类的成绩（5.1%）。</p>
+
+      
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/wangchenhust.github.io/2020/04/06/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/ResNet/" rel="next" title="深度学习/ResNet">
+                <i class="fa fa-chevron-left"></i> 深度学习/ResNet
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/wangchenhust.github.io/2020/04/06/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/GoogleNet/" rel="prev" title="深度学习/GoogleNet">
+                深度学习/GoogleNet <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -310,6 +393,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -542,6 +629,10 @@
 
 
   
+  <script type="text/javascript" src="/wangchenhust.github.io/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/wangchenhust.github.io/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

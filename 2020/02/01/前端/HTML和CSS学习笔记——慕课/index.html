@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/wangchenhust.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/wangchenhust.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/wangchenhust.github.io/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/wangchenhust.github.io/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/wangchenhust.github.io/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/wangchenhust.github.io/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/wangchenhust.github.io/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="basic web," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="HTML和CSS学习笔记——慕课 网站与网页 网站：互联网上用于展示特定内容的相关网页集合。 网页：网站中的一页，一个网站中的网页通过“超链接”的方式被组织在一起。 主页的文件名通常是index 页面元素：LOGO站标、导航栏、文字链接、banner广告横幅、表单">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML和CSS学习笔记——慕课">
+<meta property="og:url" content="https://wangchenhust.github.io/2020/02/01/%E5%89%8D%E7%AB%AF/HTML%E5%92%8CCSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E6%85%95%E8%AF%BE/index.html">
+<meta property="og:site_name" content="MorningCoder">
+<meta property="og:description" content="HTML和CSS学习笔记——慕课 网站与网页 网站：互联网上用于展示特定内容的相关网页集合。 网页：网站中的一页，一个网站中的网页通过“超链接”的方式被组织在一起。 主页的文件名通常是index 页面元素：LOGO站标、导航栏、文字链接、banner广告横幅、表单">
+<meta property="og:image" content="D:%5Csoftdownload%5COffice%5C%E6%9C%89%E9%81%93%E4%BA%91%5CFile%5Cwangchen_hust@163.com%5Cc861e5b2047748ffb76222e4b8708826%5Cclipboard.png">
+<meta property="og:image" content="D:%5Csoftdownload%5COffice%5C%E6%9C%89%E9%81%93%E4%BA%91%5CFile%5Cwangchen_hust@163.com%5C27069718933c4acea12ceeaa396e5518%5Cclipboard.png">
+<meta property="og:image" content="D:%5Csoftdownload%5COffice%5C%E6%9C%89%E9%81%93%E4%BA%91%5CFile%5Cwangchen_hust@163.com%5Cc0b7c12dc8294b6eb9bbf7ba2ee73ceb%5Cclipboard.png">
+<meta property="article:published_time" content="2020-02-01T04:29:39.000Z">
+<meta property="article:modified_time" content="2020-04-21T15:57:33.352Z">
+<meta property="article:author" content="WangChen">
+<meta property="article:tag" content="basic web">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="D:%5Csoftdownload%5COffice%5C%E6%9C%89%E9%81%93%E4%BA%91%5CFile%5Cwangchen_hust@163.com%5Cc861e5b2047748ffb76222e4b8708826%5Cclipboard.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/wangchenhust.github.io/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://wangchenhust.github.io/2020/02/01/前端/HTML和CSS学习笔记——慕课/"/>
+
+
+
+
+
+  <title>HTML和CSS学习笔记——慕课 | MorningCoder</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/wangchenhust.github.io/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">MorningCoder</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Coding make a better world</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/wangchenhust.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/wangchenhust.github.io/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/wangchenhust.github.io/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/wangchenhust.github.io/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangchenhust.github.io/wangchenhust.github.io/2020/02/01/%E5%89%8D%E7%AB%AF/HTML%E5%92%8CCSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E6%85%95%E8%AF%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WangChen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/wangchenhust.github.io/uploads/jobs.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MorningCoder">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HTML和CSS学习笔记——慕课</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-01T12:29:39+08:00">
+                2020-02-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/wangchenhust.github.io/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>HTML和CSS学习笔记——慕课</p>
+<p>网站与网页</p>
+<p>网站：互联网上用于展示特定内容的相关网页集合。</p>
+<p>网页：网站中的一页，一个网站中的网页通过“超链接”的方式被组织在一起。</p>
+<p>主页的文件名通常是index</p>
+<p>页面元素：LOGO站标、导航栏、文字链接、banner广告横幅、表单</p>
+<a id="more"></a>
+
+<p>从开发者角度：</p>
+<p>网站：文件夹  网页：文件</p>
+<p>浏览器：解析网页源代码、渲染网页。读取 HTML 文档，并以网页的形式显示出它们。</p>
+<p>前端技术构成</p>
+<p><img src="D:%5Csoftdownload%5COffice%5C%E6%9C%89%E9%81%93%E4%BA%91%5CFile%5Cwangchen_hust@163.com%5Cc861e5b2047748ffb76222e4b8708826%5Cclipboard.png" alt="img"></p>
+<p><strong>HTML：HyperText MarkUp Language</strong></p>
+<p>标签、元素：</p>
+<p><strong>标签</strong>由&lt;&gt;包围，成对出现。结束标签比开始标签多一个/，例如<title>百度一下</title>,这个整体称为<strong>元素。</strong></p>
+<ul>
+<li>单独出现标签<img    /></li>
+<li>标签嵌套：<html><body></body></html>，注意缩进</li>
+</ul>
+<p>编辑器：</p>
+<p>记事本</p>
+<p>Sublime Text3</p>
+<p>emmet插件</p>
+<p>webstorm</p>
+<ul>
+<li>Adobe Dreamweaver</li>
+<li>Microsoft Expression Web</li>
+<li>CoffeeCup HTML Editor</li>
+</ul>
+<p>基本的HTML标签</p>
+<p>标题： <h1> - <h6> </p>
+<p>段落：<p>  注：段落内部连续空格显示为一个空格</p>
+<p>段内换行：<br /></p>
+<p>段内分组：<span>,将需要特殊表达的文字放在<span>标签对中</p>
+<p>预留格式：<pre >，一对放在文本前后，文本中的空格和换行符都会被保留，就不需要加<br />、&nbsp等，适用于代码</p>
+<p>水平线：<hr /></p>
+<p>链接：<a> href 属性指定链接的地址，style属性：无下划线链接style="text-decoration:none"，Target 属性定义文档在何处显示，如target="_blank"表示在新窗口打开文档；name 属性创建书签，对读者是不可见，将 # 符号和锚名称添加到 URL 的末端，就可以直接链接到 tips 这个命名锚了，通常用于目录。</p>
+<p>图像： <img> </p>
+<p>定义图像地图：<map></p>
+<p>定义图像地图中的可点击区域:<area></p>
+<p>空格字符：&nbsp;特殊字符要求全小写</p>
+<p>注释：<!-- 这是一段注释，可跨行   --></p>
+<p>短引用（“”）：可以用一对<q>标签，或者直接用“</p>
+<p>长引用:<blockquote>，会缩进</p>
+<p>缩略词：<abbr>，鼠标放在WHO会有显示。例如：<p><abbr title="World Health Organization">WHO</abbr> 成立于 1948 年。</p></p>
+<p>定义：<dfn>，<p><dfn title="World Health Organization">WHO</dfn> 成立于 1948 年。</p></p>
+<p>定义文档或文章的联系信息：<address>，以斜体显示内容</p>
+<p>著作的标题： <cite> ，以斜体显示内容</p>
+<p>覆盖当前文本方向：<bdo>，文字反序。例：<bdo dir="rtl">This text will be written from right to left</bdo></p>
+<p>键盘输入:<kbd> </p>
+<p>计算机输出示例: <samp></p>
+<p>编程代码示例: <code> </p>
+<p>数学变量: <var> ,例：<p><var>E</var> = <var>m</var> <var>c</var><sup>2</sup></p></p>
+<p>区域：<div>,块级元素,能够用作其他 HTML 元素的容器，只需要在body中的name属性值改为定义的类名。</p>
+<p>无序列表：<ul>，此列项目使用粗体圆点标记</p>
+<p>有序列表：<ol>，此列项目使用数字序号标记</p>
+<p>列表项：<li></p>
+<p>自定义列表以 <dl> 标签开始、列表项<dt>、描述<dd></p>
+<p>表格：<table>     分行<tr>  单元格<td> 表头单元格<th>加粗的</p>
+<p>表单：<form></p>
+<p>表单元素：，用于收集用户信息。在typr属性值设置输入、确定、重置、单选框radio(注意name中的值要为一样的）、复选框checkbox、下拉列表框<select> <option>、文本域Textarea</p>
+<p>语义化：强调：<em> 对应着无语义的<i>; 重点强调：<strong>对应着无语义的<b>,自定义 <dl> 、<dt>、<dd></p>
+<p>HTML样式属性</p>
+<p>背景颜色：background-color </p>
+<h2 style="background-color:red">This is a heading</h2>
+
+<p>字体、颜色、尺寸：font-family、color 以及 font-size </p>
+<p style="font-family:arial;color:red;font-size:20px;">A paragraph.</p>
+
+<p>文本对齐：text-align</p>
+<h1 style="text-align:center">This is a heading</h1>
+
+<p>内部样式表：<head>内容中添加需要的样式</p>
+<p>外部样式表：<head>内容中添加外部herf</p>
+<p>内联样式：应用到个别元素，是在相关的标签中使用样式属性。针对某一句话。</p>
+<p><strong>CSS</strong></p>
+<p>颜色：</p>
+<ul>
+<li>十六进制色  #RRGGBB</li>
+<li>RGB 颜色    rgb(0,0,255)</li>
+<li>RGBA 颜色  rgba(red, green, blue, alpha)</li>
+<li>HSL 颜色    hsl(120,65%,75%)</li>
+<li>HSLA 颜色  hsla(hue, saturation, lightness, alpha)</li>
+</ul>
+<p>行内样式：在<p>里面定义属性style</p>
+<p>内嵌样式：在<head>中添加css的<style>标签</p>
+<p>单独文件样式表：用一个单独文件style.css定义样式，然后再用<link>连接到css文件，可以重复使用便于修改。优先级：多重样式可以重叠、覆盖；采用就近原则；行内>内嵌>链接>默认样式。</p>
+<ul>
+<li>css选择器</li>
+</ul>
+<p>标签</p>
+<style>
+
+​               body{background-color: #ccc;
+
+​            text-align: :center;}
+
+​        h1{font-size: 20px;}
+
+​        p{font-size: :24px;
+
+​            color: red;}
+
+​    </style>
+
+<p>类别（与ID的区别是可多次被引用，作用于多个网页元素上）</p>
+<p><strong>.</strong>one{font-size: 12px;</p>
+<p>​            color:white;}</p>
+<p class="one">类别</p>
+
+<p>ID选择器</p>
+<p>#two{font-size: :48px;</p>
+<p>​            color: blue;}</p>
+<p id="two">ID选择器</p>
+
+<p>集体</p>
+<p>h1,p{color:yellow;}</p>
+<p>嵌套</p>
+<p>p span{color:green;}</p>
+<p><span>嵌</span>套</p>
+
+<p>全局声明</p>
+<p>*****{text-align: center;}</p>
+<ul>
+<li>混用</li>
+</ul>
+<p>多个claa选择器可以混用，用空格隔开；</p>
+<div class="one two left">……</div>
+
+<p>id和class混用；</p>
+<div id="my" class="one two left">……</div>
+
+<p>id选择器不可以多个同时使用。从语义上来说，id选择器被唯一使用，不要被多次使用，也不要同时使用</p>
+<ul>
+<li>css样式</li>
+</ul>
+<p>单位</p>
+<ol>
+<li>px 像素</li>
+<li>em 自适应字体  1em 2em</li>
+<li>% 百分比</li>
+</ol>
+<p>颜色</p>
+<ol>
+<li>颜色名red,green,blue</li>
+<li>rgb(x,x,x)</li>
+<li>rgb(x%,x%,x%)</li>
+<li>rgba(x,x,x,x);a表示透明度，取值在[0-1]</li>
+<li>#rrggbb十六进制</li>
+</ol>
+<p>文本</p>
+<p>文本颜色color</p>
+<p>字符间距letter-spacing :2px  -3px</p>
+<p>行高line-height  :1.5em  14px   120%  常用于文本垂直居中对齐，将文本与图片垂直居中对齐，采用line-height与height相等</p>
+<p>对齐text-align  :right left center justify</p>
+<p>装饰线text-decoration  :none（常用于超链接） overline（淘宝价格折扣删除线） underline line-through  </p>
+<p>首行缩进text-index 2em</p>
+<p>字体</p>
+<p>font-family</p>
+<p>font-size  14px 120%</p>
+<p>font-style 斜体italic</p>
+<p>font-weight 粗体bold</p>
+<p>font在一个声明中设置所有字体属性。次序为：斜体 粗体 字号/行高 字体</p>
+<p>背景(空元素需要先定义元素的高度和宽度）</p>
+<p>background-color</p>
+<p>background-image:url()</p>
+<p>background-repeat:repeat repeat-x repeat-y no-repeatb背景单元格图片填充，xy表示方向</p>
+<p>上面都可写在一个里面  background:颜色 图片 repeat</p>
+<p>超链接（：伪类选择器）</p>
+<p>a:link 普通的，未被访问</p>
+<p>a:visited用户已访问的样式</p>
+<p>a:hover 鼠标位于链接上方停留时的样式，必须位于a:link  a:visited后面</p>
+<p>a:active 链接被点击的时刻的样式 必须位于a:hover后面</p>
+<p>  次序记忆法：love&hate</p>
+<p>列表List</p>
+<p>list-style-image为列表标志设置图像</p>
+<p>list-style-position标志的位置</p>
+<p>list-style-type标志的类型</p>
+<p>list-style所有属性设置于一个列表中</p>
+<p>表格</p>
+<p>大小：width height</p>
+<p>边框：border  </p>
+<p>​      border-collaspe将内层边框与外层边框重合</p>
+<p>奇偶选择器：:nth-child(odd|even)多用于奇偶分行的表格</p>
+<p>​      例子：tr:nth-child(odd){background-color:red;}</p>
+<p>CSS布局与定位</p>
+<p>盒子模型：页面元素大小、边框、与其他元素距离</p>
+<p><img src="D:%5Csoftdownload%5COffice%5C%E6%9C%89%E9%81%93%E4%BA%91%5CFile%5Cwangchen_hust@163.com%5C27069718933c4acea12ceeaa396e5518%5Cclipboard.png" alt="img"></p>
+<ul>
+<li>组成：</li>
+</ul>
+<p>content内容</p>
+<p>css样式</p>
+<p>盒子实际宽度：content + margin+ border+padding</p>
+<p>margin设置：</p>
+<p>1.margin 1px;</p>
+<p>2.margin:1px 2px ;</p>
+<p>3.margin:1px 2px 3px 4px;分别对应top right bottom left</p>
+<p>水平居中</p>
+<p>图片和文字居中 text-align:center;</p>
+<p>div水平居中 margin:0 suto;使得div区域在盒子里水平居中</p>
+<ul>
+<li>对浏览器默认设置清零</li>
+</ul>
+<p>*{margin :0;</p>
+<p>  padding: 0;}</p>
+<p>定位机制：文档流、浮动定位、层定位</p>
+<ul>
+<li>文档流</li>
+</ul>
+<p><img src="D:%5Csoftdownload%5COffice%5C%E6%9C%89%E9%81%93%E4%BA%91%5CFile%5Cwangchen_hust@163.com%5Cc0b7c12dc8294b6eb9bbf7ba2ee73ceb%5Cclipboard.png" alt="img"></p>
+<p>将元素显示为block元素</p>
+<p>a{    display:block;使得元素a具有块状元素特点； }</p>
+<p>将元素显示为inline元素</p>
+<p>div{    display:inline; }</p>
+<p>将元素显示为inline-block元素</p>
+<p>img{    display:inlineblock; }</p>
+<ul>
+<li>浮动定位</li>
+</ul>
+<p>div用于横向排列</p>
+<p>float用处：1)希望图片位于文字左侧或右侧就把float属性设为left right;  2)用于列的布局。</p>
+<p>使用clear属性时注意侧栏向右浮动，并且短于主内容区域。页脚（footer）按浮动所要求的向上跳到了可能的空间，这时候需要用<strong>#footer{clear:both}</strong>来清除两侧的浮动，保证footer位于下端中间。</p>
+<ul>
+<li>层定位</li>
+</ul>
+<p>position（left、right、top、bottom、z-index前后叠加次序）</p>
+<ul>
+<li><ul>
+<li>static默认值：没有定位，元素出现在正常流中，上述5种无效。</li>
+<li>fixed固定定位：相对于<strong>浏览器窗口</strong>进行定位</li>
+<li>relative相对定位：总是相对于<strong>直接父元素</strong>进行定位，无论父元素是什么定位方式</li>
+<li>absolute绝对定位：相对于<strong>static定位以外的第一个父元素</strong>进行定位，如果其父层中都未定义absolute或relative，则将相对<strong>body</strong>定位。</li>
+</ul>
+</li>
+</ul>
+<p>一般将relative+absolute结合使用，习惯将外层定为relative,内层定位absolute</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/wangchenhust.github.io/tags/basic-web/" rel="tag"># basic web</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/wangchenhust.github.io/2020/01/01/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/wangchenhust.github.io/2020/02/18/Python%E5%AD%A6%E4%B9%A0/%E7%88%AC%E8%99%AB%E7%AE%80%E4%BB%8B/" rel="prev" title="Python学习/爬虫简介">
+                Python学习/爬虫简介 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/wangchenhust.github.io/uploads/jobs.png"
+                alt="WangChen" />
+            
+              <p class="site-author-name" itemprop="name">WangChen</p>
+              <p class="site-description motion-element" itemprop="description">Stay hungry, stay foolish</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/wangchenhust.github.io/archives">
+              
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/wangchenhust.github.io/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/wangchenhust.github.io/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text"> -  
+段落：  注：段落内部连续空格显示为一个空格
+段内换行：
+
+段内分组：,将需要特殊表达的文字放在标签对中
+预留格式：，一对放在文本前后，文本中的空格和换行符都会被保留，就不需要加
+、&amp;nbsp等，适用于代码
+水平线：
+链接： href 属性指定链接的地址，style属性：无下划线链接style&#x3D;&quot;text-decoration:none&quot;，Target 属性定义文档在何处显示，如target&#x3D;&quot;_blank&quot;表示在新窗口打开文档；name 属性创建书签，对读者是不可见，将 # 符号和锚名称添加到 URL 的末端，就可以直接链接到 tips 这个命名锚了，通常用于目录。
+图像：  
+定义图像地图：
+定义图像地图中的可点击区域:
+空格字符：&amp;nbsp;特殊字符要求全小写
+注释：
+短引用（“”）：可以用一对标签，或者直接用“
+长引用:，会缩进
+缩略词：，鼠标放在WHO会有显示。例如：WHO 成立于 1948 年。
+定义：，WHO 成立于 1948 年。
+定义文档或文章的联系信息：，以斜体显示内容
+著作的标题：  ，以斜体显示内容
+覆盖当前文本方向：，文字反序。例：This text will be written from right to left
+键盘输入: 
+计算机输出示例: 
+编程代码示例:  
+数学变量:  ,例：E &#x3D; m c2
+区域：,块级元素,能够用作其他 HTML 元素的容器，只需要在body中的name属性值改为定义的类名。
+无序列表：，此列项目使用粗体圆点标记
+有序列表：，此列项目使用数字序号标记
+列表项：
+自定义列表以  标签开始、列表项、描述
+表格：     分行  单元格 表头单元格加粗的
+表单：
+表单元素：，用于收集用户信息。在typr属性值设置输入、确定、重置、单选框radio(注意name中的值要为一样的）、复选框checkbox、下拉列表框 、文本域Textarea
+语义化：强调： 对应着无语义的; 重点强调：对应着无语义的,自定义  、、
+HTML样式属性
+背景颜色：background-color 
+This is a heading
+
+字体、颜色、尺寸：font-family、color 以及 font-size 
+A paragraph.
+
+文本对齐：text-align
+This is a heading
+
+内部样式表：内容中添加需要的样式
+外部样式表：内容中添加外部herf
+内联样式：应用到个别元素，是在相关的标签中使用样式属性。针对某一句话。
+CSS
+颜色：
+
+十六进制色  #RRGGBB
+RGB 颜色    rgb(0,0,255)
+RGBA 颜色  rgba(red, green, blue, alpha)
+HSL 颜色    hsl(120,65%,75%)
+HSLA 颜色  hsla(hue, saturation, lightness, alpha)
+
+行内样式：在里面定义属性style
+内嵌样式：在中添加css的标签&lt;&#x2F;p&gt;
+&lt;p&gt;单独文件样式表：用一个单独文件style.css定义样式，然后再用&lt;link&gt;连接到css文件，可以重复使用便于修改。优先级：多重样式可以重叠、覆盖；采用就近原则；行内&gt;内嵌&gt;链接&gt;默认样式。&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;css选择器&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;标签&lt;&#x2F;p&gt;
+&lt;style&gt;
+
+​               body{background-color: #ccc;
+
+​            text-align: :center;}
+
+​        h1{font-size: 20px;}
+
+​        p{font-size: :24px;
+
+​            color: red;}
+
+​    
+
+类别（与ID的区别是可多次被引用，作用于多个网页元素上）
+.one{font-size: 12px;
+​            color:white;}
+类别
+
+ID选择器
+#two{font-size: :48px;
+​            color: blue;}
+ID选择器
+
+集体
+h1,p{color:yellow;}
+嵌套
+p span{color:green;}
+嵌套
+
+全局声明
+*****{text-align: center;}
+
+混用
+
+多个claa选择器可以混用，用空格隔开；
+……
+
+id和class混用；
+……
+
+id选择器不可以多个同时使用。从语义上来说，id选择器被唯一使用，不要被多次使用，也不要同时使用
+
+css样式
+
+单位
+
+px 像素
+em 自适应字体  1em 2em
+% 百分比
+
+颜色
+
+颜色名red,green,blue
+rgb(x,x,x)
+rgb(x%,x%,x%)
+rgba(x,x,x,x);a表示透明度，取值在[0-1]
+#rrggbb十六进制
+
+文本
+文本颜色color
+字符间距letter-spacing :2px  -3px
+行高line-height  :1.5em  14px   120%  常用于文本垂直居中对齐，将文本与图片垂直居中对齐，采用line-height与height相等
+对齐text-align  :right left center justify
+装饰线text-decoration  :none（常用于超链接） overline（淘宝价格折扣删除线） underline line-through  
+首行缩进text-index 2em
+字体
+font-family
+font-size  14px 120%
+font-style 斜体italic
+font-weight 粗体bold
+font在一个声明中设置所有字体属性。次序为：斜体 粗体 字号&#x2F;行高 字体
+背景(空元素需要先定义元素的高度和宽度）
+background-color
+background-image:url()
+background-repeat:repeat repeat-x repeat-y no-repeatb背景单元格图片填充，xy表示方向
+上面都可写在一个里面  background:颜色 图片 repeat
+超链接（：伪类选择器）
+a:link 普通的，未被访问
+a:visited用户已访问的样式
+a:hover 鼠标位于链接上方停留时的样式，必须位于a:link  a:visited后面
+a:active 链接被点击的时刻的样式 必须位于a:hover后面
+  次序记忆法：love&amp;hate
+列表List
+list-style-image为列表标志设置图像
+list-style-position标志的位置
+list-style-type标志的类型
+list-style所有属性设置于一个列表中
+表格
+大小：width height
+边框：border  
+​      border-collaspe将内层边框与外层边框重合
+奇偶选择器：:nth-child(odd|even)多用于奇偶分行的表格
+​      例子：tr:nth-child(odd){background-color:red;}
+CSS布局与定位
+盒子模型：页面元素大小、边框、与其他元素距离
+
+
+组成：
+
+content内容
+css样式
+盒子实际宽度：content + margin+ border+padding
+margin设置：
+1.margin 1px;
+2.margin:1px 2px ;
+3.margin:1px 2px 3px 4px;分别对应top right bottom left
+水平居中
+图片和文字居中 text-align:center;
+div水平居中 margin:0 suto;使得div区域在盒子里水平居中
+
+对浏览器默认设置清零
+
+*{margin :0;
+  padding: 0;}
+定位机制：文档流、浮动定位、层定位
+
+文档流
+
+
+将元素显示为block元素
+a{    display:block;使得元素a具有块状元素特点； }
+将元素显示为inline元素
+div{    display:inline; }
+将元素显示为inline-block元素
+img{    display:inlineblock; }
+
+浮动定位
+
+div用于横向排列
+float用处：1)希望图片位于文字左侧或右侧就把float属性设为left right;  2)用于列的布局。
+使用clear属性时注意侧栏向右浮动，并且短于主内容区域。页脚（footer）按浮动所要求的向上跳到了可能的空间，这时候需要用#footer{clear:both}来清除两侧的浮动，保证footer位于下端中间。
+
+层定位
+
+position（left、right、top、bottom、z-index前后叠加次序）
+
+
+static默认值：没有定位，元素出现在正常流中，上述5种无效。
+fixed固定定位：相对于浏览器窗口进行定位
+relative相对定位：总是相对于直接父元素进行定位，无论父元素是什么定位方式
+absolute绝对定位：相对于static定位以外的第一个父元素进行定位，如果其父层中都未定义absolute或relative，则将相对body定位。
+
+
+
+一般将relative+absolute结合使用，习惯将外层定为relative,内层定位absolute
+</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#null"><span class="nav-number">1.0.0.0.0.1.</span> <span class="nav-text"> 
+段落：  注：段落内部连续空格显示为一个空格
+段内换行：
+
+段内分组：,将需要特殊表达的文字放在标签对中
+预留格式：，一对放在文本前后，文本中的空格和换行符都会被保留，就不需要加
+、&amp;nbsp等，适用于代码
+水平线：
+链接： href 属性指定链接的地址，style属性：无下划线链接style&#x3D;&quot;text-decoration:none&quot;，Target 属性定义文档在何处显示，如target&#x3D;&quot;_blank&quot;表示在新窗口打开文档；name 属性创建书签，对读者是不可见，将 # 符号和锚名称添加到 URL 的末端，就可以直接链接到 tips 这个命名锚了，通常用于目录。
+图像：  
+定义图像地图：
+定义图像地图中的可点击区域:
+空格字符：&amp;nbsp;特殊字符要求全小写
+注释：
+短引用（“”）：可以用一对标签，或者直接用“
+长引用:，会缩进
+缩略词：，鼠标放在WHO会有显示。例如：WHO 成立于 1948 年。
+定义：，WHO 成立于 1948 年。
+定义文档或文章的联系信息：，以斜体显示内容
+著作的标题：  ，以斜体显示内容
+覆盖当前文本方向：，文字反序。例：This text will be written from right to left
+键盘输入: 
+计算机输出示例: 
+编程代码示例:  
+数学变量:  ,例：E &#x3D; m c2
+区域：,块级元素,能够用作其他 HTML 元素的容器，只需要在body中的name属性值改为定义的类名。
+无序列表：，此列项目使用粗体圆点标记
+有序列表：，此列项目使用数字序号标记
+列表项：
+自定义列表以  标签开始、列表项、描述
+表格：     分行  单元格 表头单元格加粗的
+表单：
+表单元素：，用于收集用户信息。在typr属性值设置输入、确定、重置、单选框radio(注意name中的值要为一样的）、复选框checkbox、下拉列表框 、文本域Textarea
+语义化：强调： 对应着无语义的; 重点强调：对应着无语义的,自定义  、、
+HTML样式属性
+背景颜色：background-color 
+This is a heading
+
+字体、颜色、尺寸：font-family、color 以及 font-size 
+A paragraph.
+
+文本对齐：text-align
+This is a heading
+
+内部样式表：内容中添加需要的样式
+外部样式表：内容中添加外部herf
+内联样式：应用到个别元素，是在相关的标签中使用样式属性。针对某一句话。
+CSS
+颜色：
+
+十六进制色  #RRGGBB
+RGB 颜色    rgb(0,0,255)
+RGBA 颜色  rgba(red, green, blue, alpha)
+HSL 颜色    hsl(120,65%,75%)
+HSLA 颜色  hsla(hue, saturation, lightness, alpha)
+
+行内样式：在里面定义属性style
+内嵌样式：在中添加css的标签&lt;&#x2F;p&gt;
+&lt;p&gt;单独文件样式表：用一个单独文件style.css定义样式，然后再用&lt;link&gt;连接到css文件，可以重复使用便于修改。优先级：多重样式可以重叠、覆盖；采用就近原则；行内&gt;内嵌&gt;链接&gt;默认样式。&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;css选择器&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;标签&lt;&#x2F;p&gt;
+&lt;style&gt;
+
+​               body{background-color: #ccc;
+
+​            text-align: :center;}
+
+​        h1{font-size: 20px;}
+
+​        p{font-size: :24px;
+
+​            color: red;}
+
+​    
+
+类别（与ID的区别是可多次被引用，作用于多个网页元素上）
+.one{font-size: 12px;
+​            color:white;}
+类别
+
+ID选择器
+#two{font-size: :48px;
+​            color: blue;}
+ID选择器
+
+集体
+h1,p{color:yellow;}
+嵌套
+p span{color:green;}
+嵌套
+
+全局声明
+*****{text-align: center;}
+
+混用
+
+多个claa选择器可以混用，用空格隔开；
+……
+
+id和class混用；
+……
+
+id选择器不可以多个同时使用。从语义上来说，id选择器被唯一使用，不要被多次使用，也不要同时使用
+
+css样式
+
+单位
+
+px 像素
+em 自适应字体  1em 2em
+% 百分比
+
+颜色
+
+颜色名red,green,blue
+rgb(x,x,x)
+rgb(x%,x%,x%)
+rgba(x,x,x,x);a表示透明度，取值在[0-1]
+#rrggbb十六进制
+
+文本
+文本颜色color
+字符间距letter-spacing :2px  -3px
+行高line-height  :1.5em  14px   120%  常用于文本垂直居中对齐，将文本与图片垂直居中对齐，采用line-height与height相等
+对齐text-align  :right left center justify
+装饰线text-decoration  :none（常用于超链接） overline（淘宝价格折扣删除线） underline line-through  
+首行缩进text-index 2em
+字体
+font-family
+font-size  14px 120%
+font-style 斜体italic
+font-weight 粗体bold
+font在一个声明中设置所有字体属性。次序为：斜体 粗体 字号&#x2F;行高 字体
+背景(空元素需要先定义元素的高度和宽度）
+background-color
+background-image:url()
+background-repeat:repeat repeat-x repeat-y no-repeatb背景单元格图片填充，xy表示方向
+上面都可写在一个里面  background:颜色 图片 repeat
+超链接（：伪类选择器）
+a:link 普通的，未被访问
+a:visited用户已访问的样式
+a:hover 鼠标位于链接上方停留时的样式，必须位于a:link  a:visited后面
+a:active 链接被点击的时刻的样式 必须位于a:hover后面
+  次序记忆法：love&amp;hate
+列表List
+list-style-image为列表标志设置图像
+list-style-position标志的位置
+list-style-type标志的类型
+list-style所有属性设置于一个列表中
+表格
+大小：width height
+边框：border  
+​      border-collaspe将内层边框与外层边框重合
+奇偶选择器：:nth-child(odd|even)多用于奇偶分行的表格
+​      例子：tr:nth-child(odd){background-color:red;}
+CSS布局与定位
+盒子模型：页面元素大小、边框、与其他元素距离
+
+
+组成：
+
+content内容
+css样式
+盒子实际宽度：content + margin+ border+padding
+margin设置：
+1.margin 1px;
+2.margin:1px 2px ;
+3.margin:1px 2px 3px 4px;分别对应top right bottom left
+水平居中
+图片和文字居中 text-align:center;
+div水平居中 margin:0 suto;使得div区域在盒子里水平居中
+
+对浏览器默认设置清零
+
+*{margin :0;
+  padding: 0;}
+定位机制：文档流、浮动定位、层定位
+
+文档流
+
+
+将元素显示为block元素
+a{    display:block;使得元素a具有块状元素特点； }
+将元素显示为inline元素
+div{    display:inline; }
+将元素显示为inline-block元素
+img{    display:inlineblock; }
+
+浮动定位
+
+div用于横向排列
+float用处：1)希望图片位于文字左侧或右侧就把float属性设为left right;  2)用于列的布局。
+使用clear属性时注意侧栏向右浮动，并且短于主内容区域。页脚（footer）按浮动所要求的向上跳到了可能的空间，这时候需要用#footer{clear:both}来清除两侧的浮动，保证footer位于下端中间。
+
+层定位
+
+position（left、right、top、bottom、z-index前后叠加次序）
+
+
+static默认值：没有定位，元素出现在正常流中，上述5种无效。
+fixed固定定位：相对于浏览器窗口进行定位
+relative相对定位：总是相对于直接父元素进行定位，无论父元素是什么定位方式
+absolute绝对定位：相对于static定位以外的第一个父元素进行定位，如果其父层中都未定义absolute或relative，则将相对body定位。
+
+
+
+一般将relative+absolute结合使用，习惯将外层定为relative,内层定位absolute
+</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.1.</span> <span class="nav-text">This is a heading</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">This is a heading</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">WangChen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/wangchenhust.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/wangchenhust.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/wangchenhust.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/wangchenhust.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/wangchenhust.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/wangchenhust.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/wangchenhust.github.io/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/wangchenhust.github.io/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/wangchenhust.github.io/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/wangchenhust.github.io/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/wangchenhust.github.io/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/wangchenhust.github.io/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/wangchenhust.github.io/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/wangchenhust.github.io/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

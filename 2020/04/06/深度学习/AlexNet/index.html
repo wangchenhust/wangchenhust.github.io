@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="2012年，AlexNet在ImageNet图像分类任务竞赛中获得冠军，一鸣惊人，从此开创了深度神经网络空前的高潮。 优势：  使用了非线性激活函数ReLU（其效果在较深的网络超过Sigmoid，成功解决了Sigmoid在网络较深时的梯度弥散问题。Relu比tanh快差不多6倍) 提出了LRN（Local Response Normalization），局部响应归一化，LRN一般用在激活和池化函数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://wangchenhust.github.io/2020/01/01/hello-world/index.html">
+<meta property="og:title" content="深度学习&#x2F;AlexNet">
+<meta property="og:url" content="https://wangchenhust.github.io/2020/04/06/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/AlexNet/index.html">
 <meta property="og:site_name" content="MorningCoder">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="article:published_time" content="2020-01-01T12:57:05.239Z">
-<meta property="article:modified_time" content="2020-02-18T08:39:17.635Z">
+<meta property="og:description" content="2012年，AlexNet在ImageNet图像分类任务竞赛中获得冠军，一鸣惊人，从此开创了深度神经网络空前的高潮。 优势：  使用了非线性激活函数ReLU（其效果在较深的网络超过Sigmoid，成功解决了Sigmoid在网络较深时的梯度弥散问题。Relu比tanh快差不多6倍) 提出了LRN（Local Response Normalization），局部响应归一化，LRN一般用在激活和池化函数">
+<meta property="og:image" content="D:%5Csoftdownload%5COffice%5C%E6%9C%89%E9%81%93%E4%BA%91%5CFile%5Cwangchen_hust@163.com%5C002ce68811d84a62b505b65eba0d5478%5Cclipboard.png">
+<meta property="article:published_time" content="2020-04-05T17:41:45.998Z">
+<meta property="article:modified_time" content="2020-04-05T17:41:46.139Z">
 <meta property="article:author" content="WangChen">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="D:%5Csoftdownload%5COffice%5C%E6%9C%89%E9%81%93%E4%BA%91%5CFile%5Cwangchen_hust@163.com%5C002ce68811d84a62b505b65eba0d5478%5Cclipboard.png">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://wangchenhust.github.io/2020/01/01/hello-world/"/>
+  <link rel="canonical" href="https://wangchenhust.github.io/2020/04/06/深度学习/AlexNet/"/>
 
 
 
 
 
-  <title>Hello World | MorningCoder</title>
+  <title>深度学习/AlexNet | MorningCoder</title>
   
 
 
@@ -251,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wangchenhust.github.io/wangchenhust.github.io/2020/01/01/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://wangchenhust.github.io/wangchenhust.github.io/2020/04/06/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/AlexNet/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="WangChen">
@@ -268,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">深度学习/AlexNet</h1>
         
 
         <div class="post-meta">
@@ -280,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-01T20:57:05+08:00">
-                2020-01-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-06T01:41:45+08:00">
+                2020-04-06
               </time>
             
 
@@ -318,19 +320,54 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>2012年，AlexNet在ImageNet图像分类任务竞赛中获得冠军，一鸣惊人，从此开创了深度神经网络空前的高潮。</p>
+<p>优势：</p>
+<ul>
+<li>使用了非线性激活函数ReLU（其效果在较深的网络超过Sigmoid，成功解决了Sigmoid在网络较深时的梯度弥散问题。Relu比tanh快差不多6倍)</li>
+<li>提出了LRN（Local Response Normalization），局部响应归一化，LRN一般用在激活和池化函数后，对局部神经元的活动创建竞争机制，使其中响应比较大对值变得相对更大，并抑制其他反馈较小的神经元，增强了模型的泛化能力。ReLU本来是不需要对输入进行标准化的，但在篇论文中发现进行局部标准化能提高性能。然后设计了LRN，灵感来源于生物的神经结构，也就是活跃的神经元对相邻神经元的抑制现象（侧抑制）。</li>
+<li>使用CUDA加速深度神经卷积网络的训练，利用GPU强大的并行计算能力，处理神经网络训练时大量的矩阵运算</li>
+<li>在CNN中使用重叠的最大池化，AlexNet全部使用最大池化，避免平均池化的模糊化效果。AlexNet中提出让步长比池化核的尺寸小，这样池化层的输出之间会有重叠和覆盖，提升了特征的丰富性。</li>
+<li>使用数据增广（data agumentation）和Dropout防止过拟合。【数据增广】随机地从256256的原始图像中截取224224大小的区域，相当于增加了2048倍的数据量；【Dropout】AlexNet在后面的三个全连接层中使用Dropout，随机忽略一部分神经元，以避免模型过拟合</li>
+</ul>
+<ol>
+<li>大量数据，Deep Learning领域应该感谢李飞飞团队搞出来如此大的标注数据集合ImageNet；</li>
+<li>GPU，这种高度并行的计算神器确实助了洪荒之力，没有神器在手，Alex估计不敢搞太复杂的模型；</li>
+<li>算法的改进，包括网络变深、数据增强、ReLU、Dropout等</li>
+</ol>
+<p>使用<strong>梯度下降法</strong>的多层网络可以从大量的数据中学习复杂的，高纬，非线性的映射，这使得他们成为图像识别任务的首选。 全连接的多层网络可以作为分类器。</p>
+<p>首先，图像是非常大的，由很多像素组成。具有100个隐藏单元的全连接网络包含成千上万的权重。为了解决系统的消耗和内存占用问题，在下面描述的卷积神经网络中，位移不变性(shift invariance)可以通过<strong>权值共享</strong>实现。</p>
+<p>全连接的网络的另一个缺点就是完全忽略了输入的拓扑结构。在不影响训练的结果的情况下，输入图像可以是任意的顺序。CNN通过将<strong>隐藏结点的感受野限制在局部来提取特征</strong>。</p>
+<p>CNN通过局部感受野(local receptive fields)，权值共享(shared weights)，下采样(sub-sampling)实现位移，缩放，和形变的不变性(shift,scale,distortion invariance)。</p>
+<p><strong>卷积层的核就是特征图中所有单元使用的一组连接权重</strong>。卷积层的一个重要特性是如果输入图像发生了位移，特征图会发生相应的位移，否则特征图保持不变。这个特性是CNN<strong>对位移和形变保持鲁棒</strong>的基础。</p>
+<p>一旦计算出feature map,那么精确的位置就变得不重要了，<strong>相对于其他特征的大概位置是才是相关的</strong>。</p>
+<p>在特征图中降低特征位置的精度的方式是降低特征图的空间分辨率，这个可以通过下采样层达到，下采样层通过求局部平均降低特征图的分辨率，并且降低了输出对平移和形变的敏感度。 </p>
+<p><img src="D:%5Csoftdownload%5COffice%5C%E6%9C%89%E9%81%93%E4%BA%91%5CFile%5Cwangchen_hust@163.com%5C002ce68811d84a62b505b65eba0d5478%5Cclipboard.png" alt="img"></p>
+<p>Alexnet用了两个GPU来进行训练，然后卷积只在某一层进行交叉链接。这样可以加快训练，但效果也不会被影响。</p>
+<p>AlexNet总共包含8层，其中有5个卷积层和3个全连接层，有60M个参数，神经元个数为650k，分类数目为1000，LRN层出现在第一个和第二个卷积层后面，最大池化层出现在两个LRN层及最后一个卷积层后。</p>
+<p>第一层卷积层使用96个大小为11x11x3的卷积核对224x224x3的输入图像以4个像素为步长（这是核特征图中相邻神经元感受域中心之间的距离）进行滤波。</p>
+<p>第二层卷积层将第一层卷积层的输出（经过响应归一化和池化）作为输入，并使用256个大小为5x5x48的核对它进行滤波。</p>
+<p>第三层、第四层和第五层的卷积层在没有任何池化或者归一化层介于其中的情况下相互连接。</p>
+<p>第三层卷积层有384个大小为3x3x256的核与第二层卷积层的输出（已归一化和池化）相连。</p>
+<p>第四层卷积层有384个大小为3x3x192的核，第五层卷积层有256个大小为 的核。每个全连接层有4096个神经元。</p>
+<p>饱和的非线性函数比不饱和非线性函数f(x)=max(0,x)更慢。使用ReLUs的深度卷积神经网络训练速度比同样情况下使用tanh单元的速度快好几倍。ReLUs主要是对训练集的拟合进行加速。快速学习对由大规模数据集上训练出大模型的性能有相当大的影响。</p>
+<p>用ReLU代替了传统的Tanh或者Logistic: </p>
+<p>​        ReLU本质上是分段线性模型，前向计算非常简单，无需指数之类操作；</p>
+<p>​        ReLU的偏导也很简单，反向传播梯度，无需指数或者除法之类操作；</p>
+<p>​        ReLU不容易发生梯度发散问题，Tanh和Logistic激活函数在两端的时候导数容易趋近于零，多级连乘后梯度更加约等于0；</p>
+<p>​        ReLU关闭了右边，从而会使得很多的隐层输出为0，即网络变得稀疏，起到了类似L1的正则化作用，可以在一定程度上缓解过拟合。 </p>
+<p>ReLUs具有符合本文要求的一个性质：它不需要对输入进行归一化来防止饱和。</p>
+<p>只要一些训练样本产生一个正输入给一个ReLU，那么在那个神经元中学习就会开始。</p>
+<p>但是，我们还是发现如下的局部标准化方案有助于增加泛化性能。</p>
+<p><strong>2.2 降低过拟合( Reducing Overfitting)</strong></p>
+<p><strong>数据增强(Data Augmentation)</strong></p>
+<ul>
+<li>方法1：生成<strong>平移图像和水平翻转图像</strong>。做法就是从256x256的图像中提取随机的224x224大小的块（以及它们的水平翻转），然后基于这些提取的块训练网络。softmax层对这十个块做出的预测取均值。</li>
+<li>方法2：改变<strong>训练图像的RGB通道的强度</strong>。特别的，本文对整个ImageNet训练集的RGB像素值进行了PCA。对每一幅训练图像，本文加上多倍的主成分，倍数的值为相应的特征值乘以一个均值为0标准差为0.1的高斯函数产生的随机变量。</li>
+</ul>
+<p><strong>Dropout</strong></p>
+<ul>
+<li>它将每一个隐藏神经元的输出以50%的概率设为0。这些以这种方式被“踢出”的神经元不会参加前向传递，也不会加入反向传播。因此每次有输入时，神经网络采样一个不同的结构，但是所有这些结构都共享权值。这个技术降低了神经元之间复杂的联合适应性。 Dropout方法和数据增强一样，都是防止过拟合的。Dropout应该算是AlexNet中一个很大的创新</li>
+</ul>
 
       
     </div>
@@ -355,8 +392,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/wangchenhust.github.io/2019/07/01/%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%8A%E7%B1%BB%E7%9A%84%E5%8A%A0%E8%BD%BD/" rel="next" title="初始化与类的加载">
-                <i class="fa fa-chevron-left"></i> 初始化与类的加载
+              <a href="/wangchenhust.github.io/2020/04/06/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/LeNet/" rel="next" title="深度学习/LeNet">
+                <i class="fa fa-chevron-left"></i> 深度学习/LeNet
               </a>
             
           </div>
@@ -365,8 +402,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/wangchenhust.github.io/2020/02/01/%E5%89%8D%E7%AB%AF/HTML%E5%92%8CCSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E6%85%95%E8%AF%BE/" rel="prev" title="HTML和CSS学习笔记——慕课">
-                HTML和CSS学习笔记——慕课 <i class="fa fa-chevron-right"></i>
+              <a href="/wangchenhust.github.io/2020/04/06/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/Network%20in%20Network/" rel="prev" title="深度学习/Network in Network">
+                深度学习/Network in Network <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -419,17 +456,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -493,22 +521,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
