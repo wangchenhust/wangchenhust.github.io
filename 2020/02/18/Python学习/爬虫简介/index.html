@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/wangchenhust.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/wangchenhust.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/wangchenhust.github.io/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/wangchenhust.github.io/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/wangchenhust.github.io/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/wangchenhust.github.io/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/wangchenhust.github.io/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/wangchenhust.github.io/atom.xml" title="MorningCoder" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="爬虫定义 爬虫是一个模拟人类请求网站行为的程序。可以自动请求网页、并将数据抓取下来，然后使用一定的规则提取有价值的数据。 从技术层面来说就是通过程序模拟浏览器请求站点的行为，把站点返回HTML代码&#x2F;JSON数据&#x2F;二进制数据（图片、视频） 爬到本地，进而提取自己需要的数据，存放起来使用。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python学习&#x2F;爬虫简介">
+<meta property="og:url" content="https://wangchenhust.github.io/2020/02/18/Python%E5%AD%A6%E4%B9%A0/%E7%88%AC%E8%99%AB%E7%AE%80%E4%BB%8B/index.html">
+<meta property="og:site_name" content="MorningCoder">
+<meta property="og:description" content="爬虫定义 爬虫是一个模拟人类请求网站行为的程序。可以自动请求网页、并将数据抓取下来，然后使用一定的规则提取有价值的数据。 从技术层面来说就是通过程序模拟浏览器请求站点的行为，把站点返回HTML代码&#x2F;JSON数据&#x2F;二进制数据（图片、视频） 爬到本地，进而提取自己需要的数据，存放起来使用。">
+<meta property="og:image" content="c:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20200214161835436.png">
+<meta property="article:published_time" content="2020-02-18T07:55:57.323Z">
+<meta property="article:modified_time" content="2020-02-18T08:38:09.051Z">
+<meta property="article:author" content="WangChen">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20200214161835436.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/wangchenhust.github.io/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://wangchenhust.github.io/2020/02/18/Python学习/爬虫简介/"/>
+
+
+
+
+
+  <title>Python学习/爬虫简介 | MorningCoder</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/wangchenhust.github.io/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">MorningCoder</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Coding make a better world</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/wangchenhust.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/wangchenhust.github.io/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/wangchenhust.github.io/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/wangchenhust.github.io/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangchenhust.github.io/wangchenhust.github.io/2020/02/18/Python%E5%AD%A6%E4%B9%A0/%E7%88%AC%E8%99%AB%E7%AE%80%E4%BB%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WangChen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/wangchenhust.github.io/uploads/jobs.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MorningCoder">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python学习/爬虫简介</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-18T15:55:57+08:00">
+                2020-02-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>爬虫定义</strong></p>
+<p>爬虫是一个模拟人类请求网站行为的程序。可以自动请求网页、并将数据抓取下来，然后使用<strong>一定的规则</strong>提取有价值的数据。</p>
+<p>从技术层面来说就是通过程序模拟浏览器请求站点的行为，把站点返回HTML代码/JSON数据/二进制数据（图片、视频） 爬到本地，进而提取自己需要的数据，存放起来使用。<a id="more"></a></p>
+<p><strong>网页介绍</strong></p>
+<p>网址(URL)：URL是统一资源定位符，是用于完整地描述Internet上网页和其他资源的地址的一种标识方法，也是爬虫的<strong>入口</strong>。互联网上的每个文件都有唯一的一个的URL，它包含的信息指出文件的位置以及浏览器应该怎么处理它。</p>
+<p>网页加载方式</p>
+<ul>
+<li>同步加载：改变网址上的某些参数会导致网页发生改变。</li>
+<li>异步加载：改变网址上的参数不会使网页发生改变。</li>
+</ul>
+<p>网页源码构成</p>
+<ul>
+<li>html：描述网页的内容结构。</li>
+<li>css：描述网页的排版布局。</li>
+<li>JavaScript：描述网页的时间处理，即鼠标或键盘在网页元素上动作后的程序。</li>
+</ul>
+<p>开发者工具</p>
+<ul>
+<li><p>定义：检查当前加载的HTML、CSS和JavaScript，显示每个资源页面的请求以及载入所花的时间。</p>
+</li>
+<li><p>打开方式：</p>
+<p>（1）点击鼠标右键&gt;检查</p>
+<p>（2）键盘按Fn+F12</p>
+<p>（3）自定义以及控制Google Chrome&gt;更多工具&gt;开发者工具</p>
+</li>
+</ul>
+<p><strong>Robots协议</strong></p>
+<p>​    也称爬虫协议、机器人协议，用来告诉爬虫和搜索引擎哪些页面可以抓取、哪些不能抓取。它通常是一个叫作robots.txt的文本文件，一般放在网络的根目录下。</p>
+<p>文件内容：</p>
+<table>
+<thead>
+<tr>
+<th>文件写法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>User-agent:*</td>
+<td>*代表的所有的搜索引擎种类，是一个通配符</td>
+</tr>
+<tr>
+<td>Disallow:/abc/</td>
+<td>这里定义是禁止爬寻abc目录下面的目录</td>
+</tr>
+<tr>
+<td>Disallow:/abc/*.htm</td>
+<td>禁止访问 /abc/目录下的所有以”.htm”为后缀的URL(包含子目录)</td>
+</tr>
+<tr>
+<td>Allow: /tmp</td>
+<td>允许爬寻tmp的整个目录</td>
+</tr>
+<tr>
+<td>Allow: .htm$</td>
+<td>仅允许访问以”.htm”为后缀的URL</td>
+</tr>
+</tbody></table>
+<p>使用说明：</p>
+<ol>
+<li><p>自建网页时可以通过Robots工具来创建、校验、更新robots.txt文件，或查看网站robots.txt文件在百度生效的情况。</p>
+</li>
+<li><p>Robots工具暂不支持https站点。</p>
+</li>
+<li><p>Robots工具目前支持48k的文件内容检测，请保证创建的robots.txt文件不要过大，目录最长不超过250个字符。</p>
+</li>
+</ol>
+<p>爬虫的主要流程：</p>
+<ul>
+<li><p>构造URL</p>
+<p>爬虫要爬的数据，绝不仅仅是一个网页那么简单，有时候我们需要爬的是整个网站的数据，如果我们一个一个网页来获取url，那效率肯定太低了。所以在写爬虫程序之前，需要先知道url地址的规律，这样子才可以构造url列表，再从url列表中去url去爬我们需要的数据。</p>
+</li>
+</ul>
+<p>发送请求，获取响应</p>
+<p>通过HTTP库向目标站点发起请求，也就是发送一个Request等待服务器响应，如果服务器能正常响应，会得到一个Response，Response的内容便是所要获取的页面内容，类型可能是HTML，Json字符串，二进制数据（图片或者视频）等类型。</p>
+<p>提取数据</p>
+<p>返回的数据时html时，我们可以用正则表达式，或者是lxml模块配合xpath提取数据；返回的是json字符串时，我们可以用json模块进行数据解析；返回的是二进制数据时，可以做保存或者进一步的处理。</p>
+<p>保存数据</p>
+<p>保存形式多样，可以存为文本，也可以保存到数据库，或者保存特定格式的文件。</p>
+<p>轻量级爬虫</p>
+<p>“<strong>获取数据——解析数据——存储数据</strong>”是爬虫的三部曲，大部分爬虫都是按这样的流程来进行，这其实也是模拟了我们使用浏览器获取网页信息的过程。</p>
+<p><strong>获取数据</strong></p>
+<p>爬虫第一步操作就是模拟浏览器向服务器发送请求，python提供了功能齐全的类库来实现网络传输、服务器请求和响应。</p>
+<p>Python自带的标准库<strong>urllib2</strong>使用的较多，它是python内置的HTTP请求库，如果只进行基本的爬虫网页抓取，那么urllib2足够用。</p>
+<ul>
+<li><p>urllib：用于操作URL的模块。Python自带的标准库<strong>urllib2</strong>使用的较多，是python内置的HTTP请求库，可以进行基本的爬虫网页抓取。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file = urllib.request.urlopen(url_path).read().decode(）</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>requests：基于 urllib 编写的，阻塞式 HTTP 请求库，发出一个请求，一直等待服务器响应后，程序才能进行下一步处理。</p>
+</li>
+<li><p>selenium：自动化测试工具。一个调用浏览器的 driver，通过这个库可以直接调用浏览器完成某些操作，比如输入验证码。</p>
+</li>
+<li><p>aiohttp：基于 asyncio 实现的 HTTP 框架。异步操作借助于 async/await 关键字，使用异步库进行数据抓取，可以大大提高效率。</p>
+</li>
+</ul>
+<p><strong>解析数据</strong></p>
+<p>爬虫需要的是页面指定的部分数据值，而不是整个页面的数据，这时往往需要先进行数据的解析再进行存储。从网页上采集到的数据的数据类型有很多种,主要有HTML、 javascript、JSON、XML等格式。解析库的使用等价于快捷地定位到具体的元素获取相应的信息。下面是常用的解析库。</p>
+<p><strong>Beautiful Soup</strong></p>
+<p>Beautiful Soup是借助网页的<u>结构和属性</u>等特性来解析网页的工具，对“标签树”解析、遍历和维护，能自动转换编码。支持Python标准库中的HTML解析器,还支持一些第三方的解析器。</p>
+<img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200214161835436.png" alt="image-20200214161835436" style="zoom:25%;" />
+
+<p><strong>Re</strong></p>
+<p>Re正则表达式通常被用来检索、替换那些符合某个模式(规则)的文本。re库主要用于字符串匹配。</p>
+<p>1.raw string类型 (不包含转义符)r’text’</p>
+<p>2.string类型</p>
+<p><a href="https://www.jianshu.com/p/81873c1f9118" target="_blank" rel="noopener">主要功能函数</a></p>
+<p>使用方法:</p>
+<p>（1）函数式用法：一次次那个操作 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rst = re.search(<span class="string">r'[1-9]\d&#123;5&#125;'</span>, <span class="string">'BIT 100081'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>（2）面向对象用法：编译后的多次操作 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pat = re.compile(<span class="string">r'[1-9]\d&#123;5&#125;'</span>) </span><br><span class="line">rst = pat.search(<span class="string">'BIT 100081'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>Match对象</p>
+<table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">.string</td>
+<td align="center">待匹配的文本</td>
+</tr>
+<tr>
+<td align="center">.re</td>
+<td align="center">匹配时使用的pattern对象</td>
+</tr>
+<tr>
+<td align="center">.pos</td>
+<td align="center">正则表达式搜索文本的开始位置</td>
+</tr>
+<tr>
+<td align="center">.endpos</td>
+<td align="center">正则表达式搜索文本的结束位置</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">.group(0)</td>
+<td align="center">获得<strong>第一次</strong>匹配后的字符串</td>
+</tr>
+<tr>
+<td align="center">.start()</td>
+<td align="center">匹配字符串在原始字符的开始位置</td>
+</tr>
+<tr>
+<td align="center">.end()</td>
+<td align="center">匹配字符串在原始字符的结束位置</td>
+</tr>
+<tr>
+<td align="center">.sapn()</td>
+<td align="center">返回（.start(),.end()）</td>
+</tr>
+</tbody></table>
+<p>最小匹配操作符（在后面增加一个“？”）</p>
+<table>
+<thead>
+<tr>
+<th align="center">操作符</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">*?</td>
+<td align="center">前一个字符0次或无限次扩展，最小匹配</td>
+</tr>
+<tr>
+<td align="center">+?</td>
+<td align="center">前一个字符1次或无限次扩展，最小匹配</td>
+</tr>
+<tr>
+<td align="center">??</td>
+<td align="center">前一个字符0次或1次扩展，最小匹配</td>
+</tr>
+<tr>
+<td align="center">{m,n}?</td>
+<td align="center">扩展前一个字符m次至n次（含n），最小匹配</td>
+</tr>
+</tbody></table>
+<p><strong>Xpath</strong></p>
+<p>Xpath最初是用来搜寻XML文档的，但是它同样适用于 HTML 文档的搜索。它提供了超过 100 个内建的函数。这些函数用于字符串值、数值、日期和时间比较、节点和 QName 处理、序列处理、逻辑值等等，并且XQuery和XPointer都构建于XPath基础上。</p>
+<p><strong>css</strong></p>
+<p>Css选择器是一种快速定位元素的方法。</p>
+<p>数据存储</p>
+<p>当需要爬取的数据量较小时，可以使用<strong>文档</strong>的形式来储存，支持txt、json、csv等格式。但当数据量变大，就需要<strong>数据库</strong>的储存方式了。</p>
+<p><strong>小规模数据</strong></p>
+<p>​    TXT文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">'example.txt'</span>,<span class="string">'w'</span>,encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> file:</span><br><span class="line">	file.write(data)</span><br></pre></td></tr></table></figure>
+
+<p>​    JSON文件：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">'example.json'</span>,<span class="string">'w'</span>,encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> file:</span><br><span class="line">	file.write(json.dumps(data))</span><br></pre></td></tr></table></figure>
+
+<p>​    CSV文件：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">'example.txt'</span>,<span class="string">'w'</span>,encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> csvfile:</span><br><span class="line">	writer = csv.write(csvfile)</span><br><span class="line">    writer.writerow(一行内容)</span><br></pre></td></tr></table></figure>
+
+<p>大规模数据</p>
+<ul>
+<li>Mysql 作为关系型数据库的代表，拥有较为成熟的体系，成熟度很高，可以很好地去存储一些数据，但在在海量数据处理的时候效率会显著变慢，已然满足不了某些大数据的处理要求。</li>
+<li>MongoDB已经流行了很长一段时间，相对于MySQL ，MongoDB可以方便你去存储一些非结构化的数据，比如各种评论的文本，图片的链接等等。你也可以利用PyMongo，更方便地在Python中操作MongoDB。因为这里要用到的数据库知识其实非常简单，主要是数据如何入库、如何进行提取，在需要的时候再学习就行。</li>
+<li>Redis是一个不折不扣的内存数据库，Redis 支持的数据结构丰富，包括hash、set、list等。数据全部存在内存，访问速度快，可以存储大量的数据，一般应用于分布式爬虫的数据存储当中</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/wangchenhust.github.io/2020/02/01/%E5%89%8D%E7%AB%AF/HTML%E5%92%8CCSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E6%85%95%E8%AF%BE/" rel="next" title="HTML和CSS学习笔记——慕课">
+                <i class="fa fa-chevron-left"></i> HTML和CSS学习笔记——慕课
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/wangchenhust.github.io/2020/02/18/Python%E5%AD%A6%E4%B9%A0/%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6/" rel="prev" title="Python学习/爬虫框架">
+                Python学习/爬虫框架 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/wangchenhust.github.io/uploads/jobs.png"
+                alt="WangChen" />
+            
+              <p class="site-author-name" itemprop="name">WangChen</p>
+              <p class="site-description motion-element" itemprop="description">Stay hungry, stay foolish 主要涉及到编程（JS，Python，Linux等）和前端学习（HTML/CSS），用于个人整理知识点，回顾复习与反思</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/wangchenhust.github.io/archives">
+              
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/wangchenhust.github.io/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/wangchenhust.github.io/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/wangchenhust.github.io/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">WangChen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/wangchenhust.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/wangchenhust.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/wangchenhust.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/wangchenhust.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/wangchenhust.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/wangchenhust.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/wangchenhust.github.io/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/wangchenhust.github.io/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/wangchenhust.github.io/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/wangchenhust.github.io/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/wangchenhust.github.io/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/wangchenhust.github.io/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/wangchenhust.github.io/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/wangchenhust.github.io/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

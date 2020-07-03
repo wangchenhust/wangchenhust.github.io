@@ -1,0 +1,1835 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/wangchenhust.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/wangchenhust.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/wangchenhust.github.io/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/wangchenhust.github.io/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/wangchenhust.github.io/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/wangchenhust.github.io/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/wangchenhust.github.io/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/wangchenhust.github.io/atom.xml" title="MorningCoder" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="Stay hungry, stay foolish 主要涉及到编程（JS，Python，Linux等）和前端学习（HTML&#x2F;CSS），用于个人整理知识点，回顾复习与反思">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MorningCoder">
+<meta property="og:url" content="https://wangchenhust.github.io/index.html">
+<meta property="og:site_name" content="MorningCoder">
+<meta property="og:description" content="Stay hungry, stay foolish 主要涉及到编程（JS，Python，Linux等）和前端学习（HTML&#x2F;CSS），用于个人整理知识点，回顾复习与反思">
+<meta property="article:author" content="WangChen">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/wangchenhust.github.io/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://wangchenhust.github.io/"/>
+
+
+
+
+
+  <title>MorningCoder</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/wangchenhust.github.io/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">MorningCoder</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Coding make a better world</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/wangchenhust.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/wangchenhust.github.io/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/wangchenhust.github.io/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/wangchenhust.github.io/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangchenhust.github.io/wangchenhust.github.io/2020/06/28/%E5%89%8D%E7%AB%AF/JS/%E5%BC%82%E6%AD%A5%E4%B8%8EPromise+async+await/%E5%BC%84%E6%87%82%20JavaScript%20%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WangChen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/wangchenhust.github.io/uploads/jobs.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MorningCoder">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/wangchenhust.github.io/2020/06/28/%E5%89%8D%E7%AB%AF/JS/%E5%BC%82%E6%AD%A5%E4%B8%8EPromise+async+await/%E5%BC%84%E6%87%82%20JavaScript%20%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/" itemprop="url">前端/JS/异步与Promise+async+await/弄懂 JavaScript 执行机制</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-28T22:49:30+08:00">
+                2020-06-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          javascript是一门单线程语言，按照语句出现的顺序执行的，一切javascript版的”多线程”都是用单线程模拟出来的。
+
+同步任务
+异步任务
+
+网页的渲染过程就是一大堆同步任务，比如页面骨架和页面元素的渲染。而像加载图片音乐之类占用资源大耗时久的任务，就是异步任务。以上循环过程就是常说的Ev
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/wangchenhust.github.io/2020/06/28/%E5%89%8D%E7%AB%AF/JS/%E5%BC%82%E6%AD%A5%E4%B8%8EPromise+async+await/%E5%BC%84%E6%87%82%20JavaScript%20%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangchenhust.github.io/wangchenhust.github.io/2020/06/20/%E5%89%8D%E7%AB%AF/VUE/vue%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WangChen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/wangchenhust.github.io/uploads/jobs.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MorningCoder">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/wangchenhust.github.io/2020/06/20/%E5%89%8D%E7%AB%AF/VUE/vue%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" itemprop="url">前端/VUE/vue的生命周期</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-20T16:26:54+08:00">
+                2020-06-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          vue的生命周期Vue 实例有一个完整的生命周期，也就是从开始创建、初始化数据、编译模板、挂载Dom→渲染、更新→渲染、卸载等一系列过程，我们称这是 Vue 的生命周期。通俗说就是 Vue 实例从创建到销毁的过程，就是生命周期。
+beforeCreate: vue元素的挂载元素el和数据都为unde
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/wangchenhust.github.io/2020/06/20/%E5%89%8D%E7%AB%AF/VUE/vue%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangchenhust.github.io/wangchenhust.github.io/2020/04/06/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/VGG/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WangChen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/wangchenhust.github.io/uploads/jobs.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MorningCoder">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/wangchenhust.github.io/2020/04/06/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/VGG/" itemprop="url">深度学习/VGG</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-06T01:43:39+08:00">
+                2020-04-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><img src="D:%5Csoftdownload%5COffice%5C%E6%9C%89%E9%81%93%E4%BA%91%5CFile%5Cwangchen_hust@163.com%5C54fb94ca8f5e417888f31d4637b9c2f5%5Cclipboard.png" alt="img"></p>
+<p><img src="D:%5Csoftdownload%5COffice%5C%E6%9C%89%E9%81%93%E4%BA%91%5CFile%5Cwangchen_hust@163.com%5Ca38e9559ddc24214966f6ef1895e5202%5Cclipboard.png" alt="img"></p>
+<p>使用很小的卷积（3*3），增加网络深度可以有效提升模型的效果，而且VGGNet对其他数据集具有很好的泛化能力。
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/wangchenhust.github.io/2020/04/06/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/VGG/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangchenhust.github.io/wangchenhust.github.io/2020/04/06/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/GoogleNet/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WangChen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/wangchenhust.github.io/uploads/jobs.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MorningCoder">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/wangchenhust.github.io/2020/04/06/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/GoogleNet/" itemprop="url">深度学习/GoogleNet</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-06T01:43:21+08:00">
+                2020-04-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><img src="D:%5Csoftdownload%5COffice%5C%E6%9C%89%E9%81%93%E4%BA%91%5CFile%5Cwangchen_hust@163.com%5Cb84785a3805949a4839b5d79288b1560%5Cclipboard.png" alt="img"></p>
+<p>Inception结构：</p>
+<p>造一种“基础神经元”结构，来搭建一个稀疏性、高计算性能的网络结构。
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/wangchenhust.github.io/2020/04/06/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/GoogleNet/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangchenhust.github.io/wangchenhust.github.io/2020/04/06/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/CNN/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WangChen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/wangchenhust.github.io/uploads/jobs.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MorningCoder">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/wangchenhust.github.io/2020/04/06/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/CNN/" itemprop="url">深度学习/CNN</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-06T01:43:00+08:00">
+                2020-04-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>CNN历史演化图：</p>
+<p><img src="D:%5Csoftdownload%5COffice%5C%E6%9C%89%E9%81%93%E4%BA%91%5CFile%5Cwangchen_hust@163.com%5C568550a171da407dbe93d7b276563567%5Cclipboard.png" alt="img"></p>
+<p><img src="D:%5Csoftdownload%5COffice%5C%E6%9C%89%E9%81%93%E4%BA%91%5CFile%5Cwangchen_hust@163.com%5Cb9aa6453459a4c4f893dfacc869fc631%5Cclipboard.png" alt="img"></p>
+<p><strong>ImageNet挑战赛总结</strong></p>
+<p>从2009到2017，ImageNet的8年历史，真可谓是直接代表深度学习的革命引领。先看下图：</p>
+<p><img src="D:%5Csoftdownload%5COffice%5C%E6%9C%89%E9%81%93%E4%BA%91%5CFile%5Cwangchen_hust@163.com%5Cfe4107b655b74e6ab5b42c0d466474f2%5C23818_1440w.jpeg" alt="img"></p>
+<p>可以看到，一年一年都有结构上的创新，不止深度上的变化，top 5 error也从28.2%到3.57%（top 5 error，表示最后概率向量最大的前五名中出现了正确概率即为预测正确。上面的表示错误率），超过了接受过训练的人在ImageNet数据集上对图片进行分类的成绩（5.1%）。
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/wangchenhust.github.io/2020/04/06/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/CNN/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangchenhust.github.io/wangchenhust.github.io/2020/04/06/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/ResNet/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WangChen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/wangchenhust.github.io/uploads/jobs.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MorningCoder">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/wangchenhust.github.io/2020/04/06/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/ResNet/" itemprop="url">深度学习/ResNet</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-06T01:42:38+08:00">
+                2020-04-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>网络的层数越多，意味着能够提取到不同level的特征越丰富。并且，越深的网络提取的特征越抽象，越具有语义信息。但如果简单地增加深度，会导致<strong>梯度弥散或梯度爆炸</strong>。即使是增加正则化初始化和中间的正则化层（Batch Normalization），也只能到几十层的网络。如果变得更深，就会出<strong>现退化问题</strong>，所谓的退化问题，就是随着网络层数增加，但是在训练集上的准确率却饱和甚至下降了。这个不能解释为overfitting，因为overfit应该表现为在训练集上表现更好才对。退化问题也说明了深度网络不能很简单地被很好地优化。
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/wangchenhust.github.io/2020/04/06/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/ResNet/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangchenhust.github.io/wangchenhust.github.io/2020/04/06/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/Network%20in%20Network/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WangChen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/wangchenhust.github.io/uploads/jobs.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MorningCoder">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/wangchenhust.github.io/2020/04/06/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/Network%20in%20Network/" itemprop="url">深度学习/Network in Network</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-06T01:42:10+08:00">
+                2020-04-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>这是14年ICLR的一篇paper，虽不是在imagenet上的冠军模型，但其采用了少量的参数就松松击败了Alexnet网络，Alexnet网络参数大小是230M，采用这篇paper的算法仅仅29M。
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/wangchenhust.github.io/2020/04/06/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/Network%20in%20Network/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangchenhust.github.io/wangchenhust.github.io/2020/04/06/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/AlexNet/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WangChen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/wangchenhust.github.io/uploads/jobs.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MorningCoder">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/wangchenhust.github.io/2020/04/06/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/AlexNet/" itemprop="url">深度学习/AlexNet</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-06T01:41:45+08:00">
+                2020-04-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>2012年，AlexNet在ImageNet图像分类任务竞赛中获得冠军，一鸣惊人，从此开创了深度神经网络空前的高潮。</p>
+<p>优势：</p>
+<ul>
+<li>使用了非线性激活函数ReLU（其效果在较深的网络超过Sigmoid，成功解决了Sigmoid在网络较深时的梯度弥散问题。Relu比tanh快差不多6倍)</li>
+<li>提出了LRN（Local Response Normalization），局部响应归一化，LRN一般用在激活和池化函数后，对局部神经元的活动创建竞争机制，使其中响应比较大对值变得相对更大，并抑制其他反馈较小的神经元，增强了模型的泛化能力。ReLU本来是不需要对输入进行标准化的，但在篇论文中发现进行局部标准化能提高性能。然后设计了LRN，灵感来源于生物的神经结构，也就是活跃的神经元对相邻神经元的抑制现象（侧抑制）。
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/wangchenhust.github.io/2020/04/06/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/AlexNet/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangchenhust.github.io/wangchenhust.github.io/2020/04/06/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/LeNet/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WangChen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/wangchenhust.github.io/uploads/jobs.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MorningCoder">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/wangchenhust.github.io/2020/04/06/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/LeNet/" itemprop="url">深度学习/LeNet</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-06T01:41:02+08:00">
+                2020-04-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>手写字体识别模型LeNet5诞生于1994年，是最早的卷积神经网络之一。LeNet5通过巧妙的设计，利用卷积、参数共享、池化等操作提取特征，避免了大量的计算成本，最后再使用全连接神经网络进行分类识别，这个网络也是最近大量神经网络架构的起点。
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/wangchenhust.github.io/2020/04/06/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/LeNet/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangchenhust.github.io/wangchenhust.github.io/2020/04/06/Mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WangChen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/wangchenhust.github.io/uploads/jobs.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MorningCoder">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/wangchenhust.github.io/2020/04/06/Mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url">Mysql学习笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-06T01:37:16+08:00">
+                2020-04-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          [TOC]
+检索检索列
+
+SELECT name FROM products;  //数据一般将以它在底层表中出现的顺序显示
+SELECT name,age FROM products;
+SELECT * FROM products;检索出名字未知的列
+
+检索不同行
+
+SELECT DISTINCT
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/wangchenhust.github.io/2020/04/06/Mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/wangchenhust.github.io/page/2/">2</a><a class="extend next" rel="next" href="/wangchenhust.github.io/page/2/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/wangchenhust.github.io/uploads/jobs.png"
+                alt="WangChen" />
+            
+              <p class="site-author-name" itemprop="name">WangChen</p>
+              <p class="site-description motion-element" itemprop="description">Stay hungry, stay foolish 主要涉及到编程（JS，Python，Linux等）和前端学习（HTML/CSS），用于个人整理知识点，回顾复习与反思</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/wangchenhust.github.io/archives">
+              
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/wangchenhust.github.io/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/wangchenhust.github.io/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/wangchenhust.github.io/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">WangChen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/wangchenhust.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/wangchenhust.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/wangchenhust.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/wangchenhust.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/wangchenhust.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/wangchenhust.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/wangchenhust.github.io/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/wangchenhust.github.io/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/wangchenhust.github.io/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/wangchenhust.github.io/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/wangchenhust.github.io/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/wangchenhust.github.io/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

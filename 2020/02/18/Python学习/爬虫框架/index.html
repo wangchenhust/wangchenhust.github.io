@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/wangchenhust.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/wangchenhust.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/wangchenhust.github.io/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/wangchenhust.github.io/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/wangchenhust.github.io/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/wangchenhust.github.io/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/wangchenhust.github.io/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/wangchenhust.github.io/atom.xml" title="MorningCoder" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="Scrapy爬虫框架 ​        爬虫框架是实现爬虫功能的一个软件结构和功能组件集合；是一个半成品，能够帮助用户实现专业网络爬虫。 ​        Scarpy是一个功能非常强大的爬虫框架。它不仅能便捷地构建request，还有强大的 selector 能够方便地解析 response，可以将爬虫工程化、模块化。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python学习&#x2F;爬虫框架">
+<meta property="og:url" content="https://wangchenhust.github.io/2020/02/18/Python%E5%AD%A6%E4%B9%A0/%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6/index.html">
+<meta property="og:site_name" content="MorningCoder">
+<meta property="og:description" content="Scrapy爬虫框架 ​        爬虫框架是实现爬虫功能的一个软件结构和功能组件集合；是一个半成品，能够帮助用户实现专业网络爬虫。 ​        Scarpy是一个功能非常强大的爬虫框架。它不仅能便捷地构建request，还有强大的 selector 能够方便地解析 response，可以将爬虫工程化、模块化。">
+<meta property="og:image" content="c:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20200216132325542.png">
+<meta property="og:image" content="c:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20200216171046494.png">
+<meta property="article:published_time" content="2020-02-18T07:56:01.129Z">
+<meta property="article:modified_time" content="2020-02-18T08:38:23.537Z">
+<meta property="article:author" content="WangChen">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20200216132325542.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/wangchenhust.github.io/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://wangchenhust.github.io/2020/02/18/Python学习/爬虫框架/"/>
+
+
+
+
+
+  <title>Python学习/爬虫框架 | MorningCoder</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/wangchenhust.github.io/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">MorningCoder</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Coding make a better world</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/wangchenhust.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/wangchenhust.github.io/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/wangchenhust.github.io/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/wangchenhust.github.io/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangchenhust.github.io/wangchenhust.github.io/2020/02/18/Python%E5%AD%A6%E4%B9%A0/%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WangChen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/wangchenhust.github.io/uploads/jobs.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MorningCoder">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python学习/爬虫框架</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-18T15:56:01+08:00">
+                2020-02-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>Scrapy爬虫框架</strong></p>
+<p>​        爬虫框架是实现爬虫功能的一个软件结构和功能组件集合；是一个半成品，能够帮助用户实现专业网络爬虫。</p>
+<p>​        Scarpy是一个功能非常强大的爬虫框架。它不仅能便捷地构建request，还有强大的 selector 能够方便地解析 response，可以将爬虫工程化、模块化。<a id="more"></a></p>
+<img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200216132325542.png" alt="image-20200216132325542" style="zoom: 50%;" />
+
+<p>​        三条主要的数据流，ENGINE、DOWNLOADER、SCHEDULER在python中有现成模块，用户只需要对<u>SPIDER、ITEM PIPELINES</u>进行配置。</p>
+<p><strong>组成</strong>：</p>
+<ul>
+<li><strong>引擎（Engine）</strong>：控制所有模块之间的数据流；根据条件触发事件（框架核心。</li>
+<li><strong>下载器（Downloader）</strong>：根据请求下载网页内容，并将网页内容返回给引擎（Scrapy下载器是建立在twisted这个高效的异步模型上的）。</li>
+<li><strong>调度器（Sceduler）</strong>：对所有爬取请求进行调度管理，接受引擎发过来的请求，压入队列中，并在引擎再次请求的时候返回。</li>
+<li><strong>下载器中间件（Downloder Middleware）</strong>:位于引擎和下载器之间，可以修改、丢弃、新增请求或响应，目的是实施Engine、Sceduler和Downloader之间的用户可配置的控制。（反爬措施可以在这里加入）</li>
+<li><strong>爬虫（Spider）</strong>：解析Downloader返回的响应；产生爬取项（即提取item）；产生额外的爬取请求。每个Spider处理一个（一些）特定网站。</li>
+<li><strong>项目管道（Item Pipelines）</strong>：以流水线方式处理Spider产生的爬取项；由一组操作顺序组成，每个操作是一个Item Pipelines类型；可能的操作包括：清理、验证和查重爬取项中的HTML数据，将数据存储到数据库。</li>
+<li><strong>爬虫中间件（Spider Middleware）</strong>：位于引擎和爬虫之间，主要工作是修改、丢弃、新增请求或爬取项，目的是对请求和爬取项的再处理。</li>
+</ul>
+<p><strong>Scrapy命令行</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;scrapy&lt;command&gt;[options][args]</span><br></pre></td></tr></table></figure>
+
+<p>命令行更容易自动化，适合脚本控制，给程序员使用</p>
+<p><a href="https://www.cnblogs.com/zengsf/p/10039106.html" target="_blank" rel="noopener">常用命令</a>：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+<th>格式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>startproject</td>
+<td>创建一个新工程</td>
+<td>scrapy startproject <name>[dir]</td>
+</tr>
+<tr>
+<td>genspider</td>
+<td>创建一个爬虫</td>
+<td>scrapy genspider [options]<name><domain></td>
+</tr>
+<tr>
+<td>settings</td>
+<td>获得爬虫配置的信息</td>
+<td>scrapy settings[options]</td>
+</tr>
+<tr>
+<td>crawl</td>
+<td>运行一个爬虫</td>
+<td>scrapy crawl<spider></td>
+</tr>
+<tr>
+<td>list</td>
+<td>列出工程中所有爬虫</td>
+<td>scrapy list</td>
+</tr>
+<tr>
+<td>shell</td>
+<td>启动URL调试命令行</td>
+<td>scrapy shell[url]</td>
+</tr>
+</tbody></table>
+<p><strong>Scrapy爬虫的使用步骤</strong></p>
+<ul>
+<li><p>step1：创建一个工程和Spider模板</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;scrapy startproject Projectname</span><br><span class="line">&gt;cd Projectname</span><br><span class="line">&gt;scrapy genspider example example.com</span><br><span class="line">进一步修改spiders&#x2F;example.py文件</span><br></pre></td></tr></table></figure>
+
+<p>示例工程（python123demo）目录详解：</p>
+<img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200216171046494.png" alt="image-20200216171046494" style="zoom: 50%;" />
+</li>
+<li><p>step2：编写Spider</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">配置stocks.py文件</span><br><span class="line">修改对返回页面的处理</span><br><span class="line">修改对新增URL爬取请求处理</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>step3：编写Item Piplline</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">配置pipeline.py文件</span><br><span class="line">定义对爬取项（Scraped Item）的处理类</span><br><span class="line">配置ITEM_PIPELINE选项</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>step4：优化配置策略（修改settings.py)</p>
+</li>
+</ul>
+<p>三个主要类</p>
+<ul>
+<li><strong>Request类</strong></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">scrapy</span>.<span class="title">http</span>.<span class="title">Request</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+
+<p>Request对象表示一个HTTP请求，由Spider生成，由Downloader执行。</p>
+<table>
+<thead>
+<tr>
+<th>属性或方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>.url</td>
+<td>Request对应的请求URL地址</td>
+</tr>
+<tr>
+<td>.method</td>
+<td>对应的请求方法，’GET’ ‘POST’等</td>
+</tr>
+<tr>
+<td>.headers</td>
+<td>字典类型风格的请求头</td>
+</tr>
+<tr>
+<td>.body</td>
+<td>请求内容主体，字符串类型</td>
+</tr>
+<tr>
+<td>.meta</td>
+<td>用户添加的扩展信息，在Scrapy内部模块间传递信息使用</td>
+</tr>
+<tr>
+<td>.copy()</td>
+<td>复制该请求</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>Response类</strong></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">scrapy</span>.<span class="title">http</span>.<span class="title">Response</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+
+<p>Response对象表示一个HTTP响应，由Downloader生成，由Spider处理。</p>
+<table>
+<thead>
+<tr>
+<th>属性或方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>.url</td>
+<td>Response对应的URL地址</td>
+</tr>
+<tr>
+<td>.status</td>
+<td>HTTP状态码，默认是200</td>
+</tr>
+<tr>
+<td>.headers</td>
+<td>Response对应的头部信息</td>
+</tr>
+<tr>
+<td>.body</td>
+<td>Response对应的内容信息，字符串类型</td>
+</tr>
+<tr>
+<td>.flags</td>
+<td>一组标记</td>
+</tr>
+<tr>
+<td>.request</td>
+<td>产生Response类型对应的Request对象</td>
+</tr>
+<tr>
+<td>.copy()</td>
+<td>复制该响应</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>Item类</strong></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">scrapy</span>.<span class="title">item</span>.<span class="title">Item</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+
+<p>​        Item对象表示一个从HTML页面中提取的信息内容，由Spider生成，由Item Pipeline处理，Item类似字典类型，可以按照字典类型操作。</p>
+<p><strong>提取信息方法</strong></p>
+<p>Scrapy爬虫支持多种HTML信息提取方法：<br>• Beautiful Soup<br>• lxml<br>• re<br>• XPath Selector<br>• CSS Selector</p>
+<p><strong>requests与Scrapy比较</strong></p>
+<p>相同点：</p>
+<ol>
+<li>都可以进行页面请求和爬取；</li>
+<li>可用性好，文档丰富；</li>
+<li>都没有处理JS、提交表单、应对验证码等功能。</li>
+</ol>
+<p>不同点</p>
+<table>
+<thead>
+<tr>
+<th>Requests</th>
+<th>Scrapy</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>页面级爬虫</td>
+<td>网站级爬虫</td>
+</tr>
+<tr>
+<td>功能库</td>
+<td>框架</td>
+</tr>
+<tr>
+<td>并发性考虑不足，性能较差</td>
+<td>并发性好，性能较高</td>
+</tr>
+<tr>
+<td>重点在于页面下载</td>
+<td>重点在于爬虫结构</td>
+</tr>
+<tr>
+<td>定制灵活</td>
+<td>一般定制灵活，深度定制困难</td>
+</tr>
+<tr>
+<td>上手十分简单</td>
+<td>入门稍难</td>
+</tr>
+</tbody></table>
+<p>应用范围：非常小的需求用requests库，否则用Scrapy框架；定制程度高时可选用requests自搭框架。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/wangchenhust.github.io/2020/02/18/Python%E5%AD%A6%E4%B9%A0/%E7%88%AC%E8%99%AB%E7%AE%80%E4%BB%8B/" rel="next" title="Python学习/爬虫简介">
+                <i class="fa fa-chevron-left"></i> Python学习/爬虫简介
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/wangchenhust.github.io/2020/04/06/Mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="prev" title="Mysql学习笔记">
+                Mysql学习笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/wangchenhust.github.io/uploads/jobs.png"
+                alt="WangChen" />
+            
+              <p class="site-author-name" itemprop="name">WangChen</p>
+              <p class="site-description motion-element" itemprop="description">Stay hungry, stay foolish 主要涉及到编程（JS，Python，Linux等）和前端学习（HTML/CSS），用于个人整理知识点，回顾复习与反思</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/wangchenhust.github.io/archives">
+              
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/wangchenhust.github.io/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/wangchenhust.github.io/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/wangchenhust.github.io/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">WangChen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/wangchenhust.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/wangchenhust.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/wangchenhust.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/wangchenhust.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/wangchenhust.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/wangchenhust.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/wangchenhust.github.io/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/wangchenhust.github.io/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/wangchenhust.github.io/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/wangchenhust.github.io/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/wangchenhust.github.io/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/wangchenhust.github.io/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/wangchenhust.github.io/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/wangchenhust.github.io/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

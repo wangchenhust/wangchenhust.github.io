@@ -6,7 +6,7 @@
   <link href="/wangchenhust.github.io/atom.xml" rel="self"/>
   
   <link href="https://wangchenhust.github.io/"/>
-  <updated>2020-04-24T13:41:54.865Z</updated>
+  <updated>2020-06-28T03:59:53.183Z</updated>
   <id>https://wangchenhust.github.io/</id>
   
   <author>
@@ -15,6 +15,55 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>前端/JS/异步与Promise+async+await/弄懂 JavaScript 执行机制</title>
+    <link href="https://wangchenhust.github.io/2020/06/28/%E5%89%8D%E7%AB%AF/JS/%E5%BC%82%E6%AD%A5%E4%B8%8EPromise+async+await/%E5%BC%84%E6%87%82%20JavaScript%20%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/"/>
+    <id>https://wangchenhust.github.io/2020/06/28/%E5%89%8D%E7%AB%AF/JS/%E5%BC%82%E6%AD%A5%E4%B8%8EPromise+async+await/%E5%BC%84%E6%87%82%20JavaScript%20%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/</id>
+    <published>2020-06-28T14:49:30.980Z</published>
+    <updated>2020-06-28T03:59:53.183Z</updated>
+    
+    <content type="html"><![CDATA[<p>javascript是一门<strong>单线程</strong>语言，按照语句出现的顺序执行的，一切javascript版的”多线程”都是用单线程模拟出来的。</p><ul><li>同步任务</li><li>异步任务</li></ul><p>网页的渲染过程就是一大堆同步任务，比如页面骨架和页面元素的渲染。而像加载图片音乐之类占用资源大耗时久的任务，就是异步任务。<br><img src="https://user-gold-cdn.xitu.io/2017/11/21/15fdd88994142347?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="image"><br>以上循环过程就是常说的Event Loop(事件循环)。</p><p>怎么知道主线程执行栈为空啊？</p><p>js引擎存在<strong>monitoring process进程</strong>，会持续不断的检查主线程执行栈是否为空，一旦为空，就会去Event Queue那里检查是否有等待被调用的函数。<br>下面是一段简易的ajax请求代码：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">let data &#x3D; [];</span><br><span class="line">$.ajax(&#123;</span><br><span class="line">    url:www.javascript.com,</span><br><span class="line">    data:data,</span><br><span class="line">    success:() &#x3D;&gt; &#123;</span><br><span class="line">        console.log(&#39;发送成功!&#39;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">console.log(&#39;代码执行结束&#39;);</span><br></pre></td></tr></table></figure><ol><li>ajax进入Event Table，注册回调函数success。</li><li>执行console.log(‘代码执行结束’)。</li><li>ajax事件完成，回调函数success进入Event Queue。</li><li>主线程从Event Queue读取回调函数success并执行。</li></ol><h4 id="setTimeout"><a href="#setTimeout" class="headerlink" title="setTimeout"></a>setTimeout</h4><p>异步可以延时执行。setTimeout这个函数，是经过指定时间后，把要执行的任务加入到Event Queue中</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">    task()</span><br><span class="line">&#125;,3000)</span><br><span class="line">sleep(10000000)</span><br></pre></td></tr></table></figure><p>执行过程：</p><ul><li>task()进入Event Table并注册,计时开始。</li><li>执行sleep函数，很慢，非常慢，计时仍在继续。</li><li>3秒到了，计时事件timeout完成，task()进入Event Queue，但是sleep也太慢了吧，还没执行完，只好等着。</li><li>sleep终于执行完了，task()终于从Event Queue进入了主线程执行。</li></ul><p>setTimeout(fn,0)是不是可以立即执行呢？</p><p>setTimeout(fn,0)的含义是，指定某个任务在主线程<strong>最早可得的空闲时间执行</strong>，意思就是不用再等多少秒了，只要主线程执行栈内的同步任务全部执行完成，栈为空就马上执行。【即便主线程为空，0毫秒实际上也是达不到的。根据HTML的标准，最低是4毫秒。】</p><h4 id="setInterval"><a href="#setInterval" class="headerlink" title="setInterval"></a>setInterval</h4><p>setInterval会每隔指定的时间将注册的函数置入Event Queue，如果前面的任务耗时太久，那么同样需要等待。对于setInterval(fn,ms)来说，我们已经知道不是每过ms秒会执行一次fn，而是每过ms秒，会有fn进入Event Queue。<strong>一旦setInterval的回调函数fn执行时间超过了延迟时间ms，那么就完全看不出来有时间间隔了</strong>。</p><h4 id="Promise与process-nextTick-callback"><a href="#Promise与process-nextTick-callback" class="headerlink" title="Promise与process.nextTick(callback)"></a>Promise与process.nextTick(callback)</h4><p>Promise:<a href="https://es6.ruanyifeng.com/#docs/promise" target="_blank" rel="noopener">https://es6.ruanyifeng.com/#docs/promise</a><br>process.nextTick(callback)类似node.js版的”setTimeout”，在事件循环的下一次循环中调用 callback 回调函数。</p><p>除了广义的同步任务和异步任务，我们对任务有更精细的定义：</p><ul><li>macro-task(宏任务)：包括整体代码script，setTimeout，setInterval</li><li>micro-task(微任务)：Promise，process.nextTick<br>不同类型的任务会进入对应的Event Queue.</li></ul><p>事件循环的顺序，决定js代码的执行顺序。进入整体代码(宏任务)后，开始第一次循环。接着执行所有的微任务。然后再次从宏任务开始，找到其中一个任务队列执行完毕，再执行所有的微任务。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(function() &#123;</span><br><span class="line">    console.log(&#39;setTimeout&#39;);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">new Promise(function(resolve) &#123;</span><br><span class="line">    console.log(&#39;promise&#39;);</span><br><span class="line">&#125;).then(function() &#123;</span><br><span class="line">    console.log(&#39;then&#39;);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">console.log(&#39;console&#39;);</span><br></pre></td></tr></table></figure><p>这段代码作为宏任务，进入主线程。</p><ul><li>先遇到setTimeout，那么将其回调函数注册后分发到宏任务Event Queue。(注册过程与上同，下文不再描述)</li><li>接下来遇到了Promise，new Promise立即执行，then函数分发到微任务Event Queue。</li><li>遇到console.log()，立即执行。</li><li>好啦，整体代码script作为第一个宏任务执行结束，看看有哪些微任务？我们发现了then在微任务Event Queue里面，执行。</li><li>ok，第一轮事件循环结束了，我们开始第二轮循环，当然要从宏任务Event Queue开始。我们发现了宏任务Event Queue中setTimeout对应的回调函数，立即执行。</li><li>结束。</li></ul><p>事件循环，宏任务，微任务的关系如图所示：<br><img src="https://user-gold-cdn.xitu.io/2017/11/21/15fdcea13361a1ec?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="image"></p><p>详细示例见：<a href="https://juejin.im/post/59e85eebf265da430d571f89#heading-2" target="_blank" rel="noopener">https://juejin.im/post/59e85eebf265da430d571f89#heading-2</a></p><p>总结：</p><p>(1)js的异步我们从最开头就说javascript是一门单线程语言，不管是什么新框架新语法糖实现的所谓异步，其实都是用同步的方法去模拟的，牢牢把握住单线程这点非常重要。</p><p>(2)事件循环Event Loop事件循环是js实现异步的一种方法，也是js的执行机制。</p><p>(3)javascript的执行和运行执行和运行有很大的区别，javascript在不同的环境下，比如node，浏览器，Ringo等等，执行方式是不同的。而运行大多指javascript解析引擎，是统一的。</p><p>(4)setImmediate微任务和宏任务还有很多种类，比如setImmediate等等，执行都是有共同点的。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;javascript是一门&lt;strong&gt;单线程&lt;/strong&gt;语言，按照语句出现的顺序执行的，一切javascript版的”多线程”都是用单线程模拟出来的。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;同步任务&lt;/li&gt;
+&lt;li&gt;异步任务&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;网页的渲染过程就是一
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>前端/VUE/vue的生命周期</title>
+    <link href="https://wangchenhust.github.io/2020/06/20/%E5%89%8D%E7%AB%AF/VUE/vue%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
+    <id>https://wangchenhust.github.io/2020/06/20/%E5%89%8D%E7%AB%AF/VUE/vue%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</id>
+    <published>2020-06-20T08:26:54.641Z</published>
+    <updated>2020-06-20T08:26:54.855Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="vue的生命周期"><a href="#vue的生命周期" class="headerlink" title="vue的生命周期"></a>vue的生命周期</h2><p>Vue 实例有一个完整的生命周期，也就是从<strong>开始创建、初始化数据、编译模板、挂载Dom→渲染、更新→渲染、卸载等</strong>一系列过程，我们称这是 Vue 的生命周期。通俗说就是 Vue 实例从创建到销毁的过程，就是生命周期。</p><p>beforeCreate: vue元素的挂载元素el和数据都为undefined，还未初始化；</p><p>created：vue实例的数据对象data有了，el还没有；</p><p>beforeMount：vue实例的$el和data都初始化了，但是还挂载在之前的虚拟dom节点上，data.message还未替换；</p><p>mounted：vue实例挂载完成，data.message成功渲染。</p><p>更新前后：data变化时会触发beforeUpdate和updated方法；</p><p>销毁前后：beforeDestory和destoryed，在执行destoryed方法后，对data的改变不会触发周期函数，说明vue实例已经解除了事件监听以及dom绑定，但是dom结构依然存在；</p><p>vue生命周期的作用：</p><p>他的生命周期中有多个事件钩子，让我们控制整个vue实例的过程时更容易形成良好的逻辑。</p><p>生命周期钩子的一些使用方法：</p><p>beforeCreate：loading事件，在加载实例时触发。</p><p>created：初始化完成事件，异步请求。</p><p>mounted：挂载元素，获取dom节点</p><p>uptaded：对数据统一处理</p><p>beforeDestory：确认事件停止。</p><p>nextTick：更新数据后立即操作dom。</p><h2 id="computed和watch的区别"><a href="#computed和watch的区别" class="headerlink" title="computed和watch的区别"></a>computed和watch的区别</h2><p>computed</p><p>计算结果并返回，只有当被计算的<strong>属性发生改变</strong>时才会触发（即：计算属性的结果会被缓存，除非依赖的响应属性变化才会重新计算）</p><p>watch<br> 监听某一个值，当被监听的<strong>值发生变化</strong>时，执行相关操作。（与computed的区别是，watch更加适用于监听某一个值得变化，并做对应操作，比如请求后太接口等。而computed适用于计算已有的值并返回结果。）</p><p>监听简单数据类型：<br>data(){<br>      return{<br>        ‘first’:2<br>      }<br>    },<br>    watch:{<br>      first(){<br>        console.log(this.first)<br>      }<br>    },</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;vue的生命周期&quot;&gt;&lt;a href=&quot;#vue的生命周期&quot; class=&quot;headerlink&quot; title=&quot;vue的生命周期&quot;&gt;&lt;/a&gt;vue的生命周期&lt;/h2&gt;&lt;p&gt;Vue 实例有一个完整的生命周期，也就是从&lt;strong&gt;开始创建、初始化数据、编译模板、挂
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>深度学习/VGG</title>
